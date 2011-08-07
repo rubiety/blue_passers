@@ -1,0 +1,4 @@
+#flash
+  - flash.each do |key, value|
+    %ul{ :title => key.to_s.humanize, :class => key }
+      %li= value

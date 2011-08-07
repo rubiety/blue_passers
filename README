@@ -1,0 +1,5 @@
+== Coworking Nomads
+
+This is a web application for facilitating ad-hoc coworking among independent workers are free venues around town.
+
+This application makes heavy use of cucumber, so check out features/ to see what this application is all about!

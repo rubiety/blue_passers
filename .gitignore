@@ -1,0 +1,8 @@
+.bundle
+.rvmrc
+db/*.sqlite3
+log/*.log
+tmp/
+config/database.yml
+public/stylesheets/*.css
+public/system/*
