@@ -11,6 +11,7 @@ gem "cancan"
 
 gem "omniauth", "~> 0.2.6"
 gem "twitter"
+gem "mechanize"
 
 gem "fancy-buttons"
 gem "simple_form"
