@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
   create_table "check_ins", :force => true do |t|
     t.integer  "flight_id"
     t.integer  "user_id"
-    t.string   "tweet_reference"
+    t.integer  "tweet_reference", :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.string   "description"
     t.string   "avatar_url"
     t.integer  "check_ins_count"
+    t.integer  "last_processed_tweet_reference", :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

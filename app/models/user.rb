@@ -20,4 +20,20 @@ class User < ActiveRecord::Base
       user.avatar_url = authentication["user_info"]["image"]
     end
   end
+
+  def with_twitter
+    settings = YAML::load_file(Rails.root.join("config/twitter.yml"))
+    settings = settings[Rails.env.to_s] if settings
+
+    Twitter.configure do |config|
+      config.consumer_key = settings["key"]
+      config.consumer_secret = settings["secret"]
+      config.oauth_token = provider_token
+      config.oauth_token_secret = provider_secret
+    end
+
+    yield.tap do
+      Twitter.reset
+    end
+  end
 end

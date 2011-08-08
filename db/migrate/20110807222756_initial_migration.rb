@@ -12,6 +12,7 @@ class InitialMigration < ActiveRecord::Migration
       t.string :description
       t.string :avatar_url
       t.integer :check_ins_count
+      t.integer :last_processed_tweet_reference, :limit => 5
       t.timestamps
     end
 
@@ -43,7 +44,7 @@ class InitialMigration < ActiveRecord::Migration
     create_table :check_ins do |t|
       t.references :flight
       t.references :user
-      t.string :tweet_reference
+      t.integer :tweet_reference, :limit => 5
       t.timestamps
     end
 

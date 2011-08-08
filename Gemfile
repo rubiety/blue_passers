@@ -10,6 +10,7 @@ gem "html5-boilerplate"
 gem "cancan"
 
 gem "omniauth", "~> 0.2.6"
+gem "twitter"
 
 gem "fancy-buttons"
 gem "simple_form"
