@@ -32,7 +32,9 @@ class InitialMigration < ActiveRecord::Migration
       t.integer :origin_id
       t.integer :destination_id
       t.datetime :start_at
+      t.datetime :actual_start_at
       t.datetime :end_at
+      t.datetime :actual_end_at
       t.integer :distance
       t.integer :check_ins_count
     end
@@ -44,12 +46,23 @@ class InitialMigration < ActiveRecord::Migration
     create_table :check_ins do |t|
       t.references :flight
       t.references :user
-      t.integer :tweet_reference, :limit => 5
+      t.references :tweet
       t.timestamps
     end
 
     add_index :check_ins, :flight_id
     add_index :check_ins, :user_id
+    add_index :check_ins, :tweet_id
+
+    create_table :tweets do |t|
+      t.references :user
+      t.string :username
+      t.string :text
+      t.string :reference
+      t.string :reply_to_username
+      t.datetime :tweeted_at
+      t.datetime :created_at
+    end
   end
 
   def self.down

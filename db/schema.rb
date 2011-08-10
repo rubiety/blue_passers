@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
   create_table "check_ins", :force => true do |t|
     t.integer  "flight_id"
     t.integer  "user_id"
-    t.integer  "tweet_reference", :limit => 8
+    t.integer  "tweet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "check_ins", ["flight_id"], :name => "index_check_ins_on_flight_id"
+  add_index "check_ins", ["tweet_id"], :name => "index_check_ins_on_tweet_id"
   add_index "check_ins", ["user_id"], :name => "index_check_ins_on_user_id"
 
   create_table "flights", :force => true do |t|
@@ -36,7 +37,9 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.integer  "origin_id"
     t.integer  "destination_id"
     t.datetime "start_at"
+    t.datetime "actual_start_at"
     t.datetime "end_at"
+    t.datetime "actual_end_at"
     t.integer  "distance"
     t.integer  "check_ins_count"
   end
@@ -44,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
   add_index "flights", ["destination_id"], :name => "index_flights_on_destination_id"
   add_index "flights", ["number"], :name => "index_flights_on_number"
   add_index "flights", ["origin_id"], :name => "index_flights_on_origin_id"
+
+  create_table "tweets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "username"
+    t.string   "text"
+    t.string   "reference"
+    t.string   "reply_to_username"
+    t.datetime "tweeted_at"
+    t.datetime "created_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"

@@ -14,7 +14,6 @@ class JetBlue::Flight
     end
   end
 
-  # 416
   def self.by_number(number, date = Time.now)
     mechanize = Mechanize.new
     mechanize.get "http://www.jetblue.com/flightstatus/flightstatussched.aspx?FlightDate=#{date.strftime('%m/%d/%Y')}&FlightNum=#{number}" do |page|

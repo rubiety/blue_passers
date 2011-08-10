@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :check_ins
   has_many :flights, :through => :check_ins
 
+  after_create :follow_by_flight_master
+
   def to_s
     name
   end
@@ -32,8 +34,21 @@ class User < ActiveRecord::Base
       config.oauth_token_secret = provider_secret
     end
 
-    yield.tap do
-      Twitter.reset
+    if block_given?
+      yield.tap do
+        Twitter.reset
+      end
     end
+  end
+
+  def self.usernames
+    select(:username).map(&:username)
+  end
+
+
+  protected
+
+  def follow_by_flight_master
+    FlightMaster.follow(username)
   end
 end
