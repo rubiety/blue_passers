@@ -1,17 +1,39 @@
+- if current_user
+  %section#welcome
+    %h2 Welcome back, #{current_user}
 
-%section#introduction
-  %h1 Coming Soon
+- else
+  %section#introduction
+    = link_to "/auth/twitter", :class => "twitter-connect" do
+      Connect with Twitter
 
-  - if current_user
-    %p Welcome #{current_user}
-  - else
-    %p= link_to "Connect Your Twitter Account", "/auth/twitter"
-
-%section#map
-  %h1 Map
+    %h2 Simply tweet your flight number and we'll track it!
+    %p We can also tweet the the other people checked in on your flight.
 
 %section#leaderboard
   %h1 Leaderboard
 
+  .grouping
+    %table
+      %thead
+        %tr
+          %td User
+          %td Flights
+          %td Distance Traveled
+          %td Airports Visited
+      %tbody
+        - User.leaderboard.each do |user|
+          %tr
+            %td= user
+            %td= user.check_ins_count
+            %td= user.distance_sum
+            %td= user.airports_count
+
 %section#recent-checkins
   %h1 Recent Flights
+  %table
+    %tbody
+      - CheckIn.recent.each do |check_in|
+        %tr
+          %td= check_in.user
+          %td= check_in.flight

@@ -2,6 +2,8 @@ class Flight < ActiveRecord::Base
   belongs_to :origin, :class_name => "Airport"
   belongs_to :destination, :class_name => "Airport"
 
+  scope :recent, order("last_check_in_at desc")
+
   def self.by_number_and_day(number, date)
     where(:number => number).where("DATE(start_at) = DATE(?)", date).first
   end

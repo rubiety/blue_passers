@@ -11,8 +11,13 @@ class InitialMigration < ActiveRecord::Migration
       t.string :website
       t.string :description
       t.string :avatar_url
-      t.integer :check_ins_count
+      t.integer :check_ins_count, :default => 0, :null => false
+      t.integer :distance_sum, :default => 0, :null => false
+      t.integer :airports_count, :default => 0, :null => false
       t.integer :last_processed_tweet_reference, :limit => 5
+      t.boolean :tweet_before_departure, :default => true, :null => false
+      t.boolean :show_on_leaderboard, :default => true, :null => false
+      t.boolean :expose_flight_history, :default => true, :null => false
       t.timestamps
     end
 
@@ -36,7 +41,8 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :end_at
       t.datetime :actual_end_at
       t.integer :distance
-      t.integer :check_ins_count
+      t.integer :check_ins_count, :default => 0, :null => false
+      t.datetime :last_check_in_at
     end
 
     add_index :flights, :number
@@ -62,10 +68,12 @@ class InitialMigration < ActiveRecord::Migration
       t.string :reply_to_username
       t.datetime :tweeted_at
       t.datetime :created_at
+      t.integer :check_ins_count, :default => 0, :null => false
     end
   end
 
   def self.down
+    drop_table :tweets
     drop_table :check_ins
     drop_table :flights
     drop_table :airports

@@ -1,0 +1,7 @@
+%h1 My Account
+
+= simple_form_for @user, :url => account_path do |f|
+  = f.input :tweet_before_departure, :label => "Send me a tweet before departure with other blue passers on my flight."
+  = f.input :show_on_leaderboard, :label => "Include me on the leaderboard (home page)."
+  = f.input :expose_flight_history, :label => "Allow other users to see my past flights."
+

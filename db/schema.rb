@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.datetime "end_at"
     t.datetime "actual_end_at"
     t.integer  "distance"
-    t.integer  "check_ins_count"
+    t.integer  "check_ins_count",  :default => 0, :null => false
+    t.datetime "last_check_in_at"
   end
 
   add_index "flights", ["destination_id"], :name => "index_flights_on_destination_id"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.string   "reply_to_username"
     t.datetime "tweeted_at"
     t.datetime "created_at"
+    t.integer  "check_ins_count",   :default => 0, :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -69,8 +71,13 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.string   "website"
     t.string   "description"
     t.string   "avatar_url"
-    t.integer  "check_ins_count"
+    t.integer  "check_ins_count",                             :default => 0,    :null => false
+    t.integer  "distance_sum",                                :default => 0,    :null => false
+    t.integer  "airports_count",                              :default => 0,    :null => false
     t.integer  "last_processed_tweet_reference", :limit => 8
+    t.boolean  "tweet_before_departure",                      :default => true, :null => false
+    t.boolean  "show_on_leaderboard",                         :default => true, :null => false
+    t.boolean  "expose_flight_history",                       :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

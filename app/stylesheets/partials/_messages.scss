@@ -1,0 +1,13 @@
+#flash {
+  ul {
+    padding: 10px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+    
+    @include no-bullets;
+    @include border-radius(4px);
+
+    &.notice { background-color: #3B9C3B; }
+    &.warn { background-color: #A11010; }
+  }
+}

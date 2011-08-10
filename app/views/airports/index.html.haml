@@ -1,0 +1,11 @@
+%h1 Airports
+
+%table#airports
+  %thead
+    %tr
+      %td Name
+  %tbody
+    - Airport.all.each do |airport|
+      %tr
+        %td= airport
+

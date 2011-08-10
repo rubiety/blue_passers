@@ -3,6 +3,7 @@ class Tweet < ActiveRecord::Base
   has_many :check_ins
 
   default_scope order("id desc")
+  scope :with_check_ins, where("check_ins_count > 0")
 
   def self.from_twitter(raw_tweet)
     the_user = User.find_by_username(raw_tweet.user.screen_name)

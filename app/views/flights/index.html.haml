@@ -1,0 +1,19 @@
+%h1 Recent Flights
+
+%table#flights
+  %thead
+    %tr
+      %td Flight Number
+      %td From
+      %td To
+      %td Scheduled Departure
+      %td Scheduled Arrival
+  %tbody
+    - Flight.recent.each do |flight|
+      %tr
+        %td= flight.number
+        %td= flight.origin
+        %td= flight.destination
+        %td= flight.start_at
+        %td= flight.end_at
+

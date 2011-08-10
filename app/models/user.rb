@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
 
   after_create :follow_by_flight_master
 
+  scope :leaderboard, order("check_ins_count desc")
+
+  def self.usernames
+    select(:username).map(&:username)
+  end
+
   def to_s
     name
   end
@@ -41,8 +47,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.usernames
-    select(:username).map(&:username)
+  def update_distance_sum
+    update_attribute(:distance_sum, flights.sum(:distance))
+  end
+
+  def update_airports_count
+    # TODO
   end
 
 
