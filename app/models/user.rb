@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   def to_s
     name
   end
+  
+  def handle
+    "@#{username}"
+  end
 
   def self.initialize_with_omniauth(authentication)
     find_or_initialize_by_provider_and_provider_uid(authentication["provider"], authentication["uid"]).tap do |user|

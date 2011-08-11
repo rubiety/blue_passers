@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  font-size: 0.9em;
+  
+  $table_color: lighten($primary_color_light, 15%);
+  @include table-scaffolding;
+  @include alternating-rows-and-columns($table_color, $table_color, #111, $primary_color_darker);
+  @include outer-table-borders(1px, $primary_color_darker);
+  
+  th {
+    text-align: left;
+    color: $base_light_color;
+    font-weight: normal;
+  }
+  
+  td, th {
+    padding: 5px;
+  }
+}
