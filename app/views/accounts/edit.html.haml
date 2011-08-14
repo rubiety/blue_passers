@@ -1,7 +1,16 @@
-%h1 My Account
+%h1 My Account: #{@user.handle}
 
-= simple_form_for @user, :url => account_path do |f|
-  = f.input :tweet_before_departure, :label => "Send me a tweet before departure with other blue passers on my flight."
-  = f.input :show_on_leaderboard, :label => "Include me on the leaderboard (home page)."
-  = f.input :expose_flight_history, :label => "Allow other users to see my past flights."
+= form_for @user, :url => account_path do |f|
+  %fieldset#account-options
+    %label{:for => "user[tweet_before_departure]"}
+      = f.check_box :tweet_before_departure
+      Send me a tweet before departure with other blue passers on my flight.
+    %label{:for => "user[show_on_leaderboard]"}
+      = f.check_box :tweet_before_departure
+      Include me on the leaderboard (home page).
+    %label{:for => "user[expose_flight_history]"}
+      = f.check_box :tweet_before_departure
+      Allow other users to see my past flights.
+
+  = f.submit "Save Changes"
 

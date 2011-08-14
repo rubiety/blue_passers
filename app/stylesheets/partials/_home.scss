@@ -1,0 +1,15 @@
+body.home {
+
+  #leaderboard {
+    clear: left;
+    float: left;
+    width: ($page_width * 0.6 - 10px);
+    margin-right: 10px;
+  }
+  #recent-checkins {
+    float: left;
+    width: ($page_width * 0.4 - 10px);
+    margin-left: 10px;
+  }
+
+}

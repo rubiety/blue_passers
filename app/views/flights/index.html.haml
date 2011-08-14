@@ -1,19 +1,27 @@
-%h1 Recent Flights
+%h1 Flights
 
 %table#flights
   %thead
     %tr
-      %td Flight Number
-      %td From
-      %td To
-      %td Scheduled Departure
-      %td Scheduled Arrival
+      %th Flight Number
+      %th From
+      %th To
+      %th Scheduled Departure
+      %th Scheduled Arrival
+      %th Distance
+      %th On Flight
+      %th Last Check In
   %tbody
-    - Flight.recent.each do |flight|
+    - @flights.each do |flight|
       %tr
-        %td= flight.number
+        %td= link_to flight.number, flight
         %td= flight.origin
         %td= flight.destination
         %td= flight.start_at
         %td= flight.end_at
-
+        %td= pluralize(flight.distance, "mile")
+        %td= pluralize(flight.check_ins_count, "user")
+        %td= flight.last_check_in_at
+    - if @flights.empty?
+      %tr.no-results
+        %td No results found.

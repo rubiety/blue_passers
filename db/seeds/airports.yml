@@ -1,0 +1,182 @@
+---
+- code: BQN
+  name: Rafael Hernandez Airport
+  city_name: Aguadilla
+- code: AUA
+  name: Queen Beatrix International Airport
+  city_name: Aruba
+- code: AUS
+  name: Austin Bergstrom International Airport
+  city_name: Austin, TX
+- code: BWI
+  name: Baltimore/Washington International Thurgood Marshal Airport
+  city_name: Baltimore, MD
+- code: BGI
+  name: Sir Grantley Adams International Airport
+  city_name: Barbados
+- code: BDA
+  name: L.F. Wade International International Airport
+  city_name: Bermuda
+- code: BOG
+  name: El Dorado International Airport
+  city_name: Bogata, Columbia
+- code: BOS
+  name: General Edward Lawrence Logan International Airport
+  city_name: Boston, MA
+- code: BUF
+  name: Buffalo Niagara International Airport
+  city_name: Buffalo, NY
+- code: BUR
+  name: Bob Hope Airport
+  city_name: Burbank, CA
+- code: BTV
+  name: Burlington International Airport
+  city_name: Burlington, VT
+- code: CUN
+  name: Cancun International Airport
+  city_name: Cancun
+- code: CLT
+  name: Charlotte Douglas International Airport
+  city_name: Charlotte, NC
+- code: ORD
+  name: Chicago O'Hare International Airport
+  city_name: Chicago, IL
+- code: DEN
+  name: Denver International Airport
+  city_name: Denver, CO
+- code: FLL
+  name: Fort Lauderdale Hollywood International Airport
+  city_name: Fort Lauderdale, FL
+- code: RSW
+  name: Southwest Florida International Airport
+  city_name: Fort Myers, FL
+- code: BDL
+  name: Bradley International Airport
+  city_name: Hartford, CT
+- code: HOU
+  name: William P Hobby Airport
+  city_name: Houston, TX
+- code: JAX
+  name: Jacksonville International Airport
+  city_name: Jacksonville, FL
+- code: KIN
+  name: Norman Manley International Airport
+  city_name: Kingston
+- code: LAS
+  name: McCarran International Airport
+  city_name: Las Vegas, NV
+- code: LGB
+  name: Long Beach Airport
+  city_name: Long Beach, CA
+- code: LAX
+  name: Los Angeles International Airport
+  city_name: Los Angeles, CA
+- code: MBJ
+  name: Sangster International Airport
+  city_name: Montego Bay, Jamaica
+- code: NAS
+  name: Lynden Pindling International Airport
+  city_name: Nassau, Bahamas
+- code: MSY
+  name: Louis Armstrong New Orleans International Airport
+  city_name: New Orleans, LA
+- code: LGA
+  name: La Guardia Airport
+  city_name: New York, NY
+- code: JFK
+  name: John F Kennedy International Airport
+  city_name: New York, NY
+- code: EWR
+  name: Newark Liberty International Airport
+  city_name: Newark, NJ
+- code: SWF
+  name: Stewart International Airport
+  city_name: Newburgh, NJ
+- code: OAK
+  name: Metropolitan Oakland International Airport
+  city_name: Oakland, CA
+- code: MCO
+  name: Orlando International Airport
+  city_name: Orlando, FL
+- code: PHX
+  name: Phoenix Sky Harbor International Airport
+  city_name: Phoenix, AZ
+- code: PIT
+  name: Pittsburgh International Airport
+  city_name: Pittsburgh, PA
+- code: PSE
+  name: Mercedita Airport
+  city_name: Ponce, PR
+- code: PWM
+  name: Portland International Jetport Airport
+  city_name: Portland, ME
+- code: PDX
+  name: Portland International Airport
+  city_name: Portland, OR
+- code: POP
+  name: Gregorio Luperon International Airport
+  city_name: Puerto Plata, D.R.
+- code: PUJ
+  name: Punta Cana International Airport
+  city_name: Punta Cana, D.R.
+- code: RDU
+  name: Raleigh Durham International Airport
+  city_name: Raleigh, NC
+- code: RIC
+  name: Richmond International Airport
+  city_name: Richmond, VA
+- code: ROC
+  name: Greater Rochester International Airport
+  city_name: Rochester, NY
+- code: SMF
+  name: Sacramento International Airport
+  city_name: Sacramento, CA
+- code: SLC
+  name: Salt Lake City International Airport
+  city_name: Salt Lake City, UT
+- code: SAN
+  name: San Diego International Airport
+  city_name: San Diego, CA
+- code: SFO
+  name: San Francisco International Airport
+  city_name: San Francisco, CA
+- code: SJC
+  name: Norman Y. Mineta San Jose International Airport
+  city_name: San Jose, CA
+- code: SJU
+  name: Luis Munoz Marin International Airport
+  city_name: San Juan, PR
+- code: STI
+  name: Cibao International Airport
+  city_name: Santiago, D.R.
+- code: SDQ
+  name: Las Americas International Airport
+  city_name: Santo Domingo, D.R.
+- code: SRQ
+  name: Sarasota Bradenton International Airport
+  city_name: Sarasota, FL
+- code: SEA
+  name: Seattle Tacoma International Airport
+  city_name: Seattle, WA
+- code: UVF
+  name: Hewanorra International Airport
+  city_name: St. Lucia
+- code: SXM
+  name: Princess Juliana International Airport
+  city_name: St. Maarten
+- code: SYR
+  name: Syracuse Hancock International Airport
+  city_name: Syracuse, NY
+- code: TPA
+  name: Tampa International Airport
+  city_name: Tampa, FL
+- code: IAD
+  name: Washington Dulles International Airport
+  city_name: Washington, DC
+- code: DCA
+  name: Ronald Reagan Washington National Airport
+  city_name: Washington, DC
+- code: PBI
+  name: Palm Beach International Airport
+  city_name: West Palm Beach, FL
+

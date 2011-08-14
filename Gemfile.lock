@@ -256,9 +256,6 @@ GEM
       json_pure
       rubyzip
     shoulda-matchers (1.0.0.beta3)
-    simple_form (1.4.2)
-      actionpack (~> 3.0)
-      activemodel (~> 3.0)
     simple_oauth (0.1.5)
     spork (0.9.0.rc9)
     term-ansicolor (1.0.6)
@@ -313,6 +310,5 @@ DEPENDENCIES
   rspec-rails (>= 2.0.1)
   ruby-debug19
   shoulda-matchers
-  simple_form
   spork (>= 0.9.0.rc5)
   twitter

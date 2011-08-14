@@ -3,9 +3,19 @@
 %table#airports
   %thead
     %tr
-      %td Name
+      %th Code
+      %th City
+      %th Name
+      %th Flights
+      %th Visitors
   %tbody
-    - Airport.all.each do |airport|
-      %tr
-        %td= airport
-
+    - @airports.each do |airport|
+      %tr{:class => cycle("odd", "even")}
+        %td= link_to airport, airport
+        %td= link_to airport.city_name, airport
+        %td= airport.name
+        %td= airport.check_ins_count
+        %td= airport.unique_visitors_count
+    - if @airports.empty?
+      %tr.no-results
+        %td{:colspan => 5} No results found.

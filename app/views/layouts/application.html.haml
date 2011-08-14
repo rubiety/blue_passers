@@ -7,13 +7,14 @@
     .container
       #header-wrap
         %header#header
+          %cite Note: This site is not affiliated with JetBlue Airways Corporation
           %nav
             %ul
               %li= link_to "Leaderboard", root_path
               %li= link_to "Airports", airports_path
               %li= link_to "Flights", flights_path
               - if current_user
-                %li= link_to "My Account", edit_account_path
+                %li= link_to "Account", edit_account_path
           %h1 Blue Passers
           %h2 Connect with other jetting blue passers!
       
@@ -23,6 +24,8 @@
       
       #main-content-wrap
         #main-content
+          = render "layouts/flashes"
+
           = yield
       
       #footer-wrap

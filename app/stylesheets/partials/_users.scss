@@ -1,0 +1,62 @@
+body.users {
+
+  header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $base_dark_color;
+    margin-bottom: 10px;
+    @include clearfix;
+
+    h1, h2 { margin-bottom: 2px; }
+    p.description {
+      margin-top: 8px;
+      clear: left;
+    }
+
+    img {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid $base_dark_color;
+    }
+
+    dl {
+      float: right;
+      width: 300px;
+      background: $primary_color_darker;
+      padding: 10px;
+      margin-bottom: 10px;
+      color: $base_light_color;
+
+      @include clearfix;
+      @include border-radius(8px);
+
+      dt {
+        clear: left;
+        float: left;
+        width: 200px;
+        padding-bottom: 6px;
+      }
+      dd {
+        float: left;
+        width: 100px;
+        padding-bottom: 6px;
+      }
+    }
+  }
+
+
+  #flight-history {
+    clear: left;
+    float: left;
+    width: ($page_width * 0.7 - 10px);
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  #airports-visited {
+    float: right;
+    width: ($page_width * 0.3 - 10px);
+    margin-left: 10px;
+  }
+
+}

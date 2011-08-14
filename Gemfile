@@ -14,7 +14,6 @@ gem "twitter"
 gem "mechanize"
 
 gem "fancy-buttons"
-gem "simple_form"
 gem "paperclip"
 gem "friendly_id"
 

@@ -6,6 +6,9 @@ class AirportsController < ApplicationController
   end
 
   def show
+    @check_ins = @airport.check_ins
+    @flights_as_origin = @airport.flights_as_origin
+    @flights_as_destination = @airport.flights_as_destination
   end
 
 

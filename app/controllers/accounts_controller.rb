@@ -1,10 +1,11 @@
 class AccountsController < ApplicationController
+  before_filter :require_login!
+  before_filter :find_user
+
   def edit
-    @user = current_user
   end
 
   def update
-    @user = current_user
     @user.attributes = params[:user]
 
     if @user.save
@@ -12,5 +13,13 @@ class AccountsController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+
+  protected
+
+  def find_user
+    @user = current_user
+    authorize! :manage, @user
   end
 end

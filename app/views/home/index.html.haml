@@ -3,30 +3,35 @@
   %table
     %thead
       %tr
-        %th{:width => "5%"} &nbsp;
-        %th{:width => "10%"} &nbsp;
+        %th{:width => "7%"} &nbsp;
+        %th{:width => "8%"} &nbsp;
         %th{:width => "40%"} User
         %th{:width => "15%"} Flights
         %th{:width => "15%"} Distance
         %th{:width => "15%"} Airports
     %tbody
-      - User.leaderboard.each_with_index do |user, i|
-        - 6.times do
-          %tr{:class => cycle("odd", "even")}
-            %td= "#{i + 1}."
-            %td= image_tag user.avatar_url, :alt => user.handle, :height => "30px"
-            %td= user.handle
-            %td= user.check_ins_count
-            %td= user.distance_sum
-            %td= user.airports_count
+      - @leaderboard_users.each_with_index do |user, i|
+        %tr{:class => cycle("odd", "even")}
+          %td= "#{i + 1}."
+          %td= link_to image_tag(user.avatar_url, :alt => user.handle, :height => "30px"), user
+          %td= link_to user.handle, user
+          %td= user.check_ins_count
+          %td= user.distance_sum
+          %td= user.airports_count
+      - if @leaderboard_users.empty?
+        %tr.no-results
+          %td{:colspan => 6} No results found.
 
 %section#recent-checkins
   %h1 Recent Flights
   %table
     %tbody
-      - CheckIn.recent.each do |check_in|
-        - 2.times do
-          %tr{:class => cycle("odd", "even")}
-            %td= image_tag check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"
-            %td= check_in.user.handle
-            %td= check_in.flight
+      - @recent_check_ins.each do |check_in|
+        %tr{:class => cycle("odd", "even")}
+          %td= link_to image_tag(check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"), check_in.user
+          %td= link_to check_in.user.handle, check_in.user
+          %td= link_to check_in.flight, check_in.flight
+      - if @recent_check_ins.empty?
+        %tr.no-results
+          %td{:colspan => 3} No results found.
+

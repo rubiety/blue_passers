@@ -14,7 +14,6 @@ class InitialMigration < ActiveRecord::Migration
       t.integer :check_ins_count, :default => 0, :null => false
       t.integer :distance_sum, :default => 0, :null => false
       t.integer :airports_count, :default => 0, :null => false
-      t.integer :last_processed_tweet_reference, :limit => 5
       t.boolean :tweet_before_departure, :default => true, :null => false
       t.boolean :show_on_leaderboard, :default => true, :null => false
       t.boolean :expose_flight_history, :default => true, :null => false
@@ -28,6 +27,11 @@ class InitialMigration < ActiveRecord::Migration
       t.string :code, :limit => 3
       t.string :name
       t.string :city_name
+      t.integer :flights_as_origin_count, :default => 0, :null => false
+      t.integer :flights_as_destination_count, :default => 0, :null => false
+      t.integer :check_ins_as_origin_count, :default => 0, :null => false
+      t.integer :check_ins_as_destination_count, :default => 0, :null => false
+      t.integer :unique_visitors_count, :default => 0, :null => false
     end
 
     add_index :airports, :code
@@ -70,9 +74,23 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :created_at
       t.integer :check_ins_count, :default => 0, :null => false
     end
+
+
+    create_table :slugs do |t|
+      t.string :name
+      t.integer :sluggable_id
+      t.integer :sequence, :null => false, :default => 1
+      t.string :sluggable_type, :limit => 40
+      t.string :scope
+      t.datetime :created_at
+    end
+    
+    add_index :slugs, :sluggable_id
+    add_index :slugs, [:name, :sluggable_type, :sequence, :scope], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   end
 
   def self.down
+    drop_table :slugs
     drop_table :tweets
     drop_table :check_ins
     drop_table :flights

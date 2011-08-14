@@ -12,7 +12,9 @@ body {
 #header {
   width: $page_width;
   margin: 0 auto;
+  padding: 0;
   position: relative;
+  border: none;
   
   h1 {
     margin: 6px 0 0 0;
@@ -21,6 +23,12 @@ body {
   h2 {
     margin: 2px 0 14px 0;
     font-size: 1.3em;
+  }
+  cite {
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    font-size: 0.9em;
   }
   nav {
     position: absolute;
@@ -38,11 +46,11 @@ body {
       @include inline-block-list;
       border-right: 1px solid $base_dark_color;
       li {
-        padding: 5px 20px;
+        padding: 5px 15px;
         border-left: 1px solid $base_dark_color;
         
         a {
-          font-size: 1.2em;
+          font-size: 1.1em;
           font-weight: bold;
           text-decoration: none;
           &:hover { color: $primary_color_light; }
@@ -107,20 +115,13 @@ body {
   margin: 0 auto;
   @include clearfix;
   
-  #leaderboard {
-    clear: left;
-    float: left;
-    width: ($page_width * 0.6 - 10px);
-    margin-right: 10px;
-  }
-  #recent-checkins {
-    float: left;
-    width: ($page_width * 0.4 - 10px);
-    margin-left: 10px;
-  }
 }
 
-#footer-wrap { background-color: $primary_color; }
+#footer-wrap { 
+  background-color: $primary_color;
+  @include box-shadow($primary_color_dark 2px 2px 10px);
+  margin-top: 20px;
+}
 footer {
   width: 960px;
   min-height: 300px;

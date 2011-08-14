@@ -1,15 +1,17 @@
 class Flight < ActiveRecord::Base
-  belongs_to :origin, :class_name => "Airport"
-  belongs_to :destination, :class_name => "Airport"
+  belongs_to :origin, :class_name => "Airport", :counter_cache => :flights_as_origin_count
+  belongs_to :destination, :class_name => "Airport", :counter_cache => :flights_as_destination_count
 
   scope :recent, order("last_check_in_at desc")
+
+  has_friendly_id :to_s, :use_slug => true
 
   def self.by_number_and_day(number, date)
     where(:number => number).where("DATE(start_at) = DATE(?)", date).first
   end
 
   def to_s
-    "JBU#{number} #{origin} -> #{destination}"
+    "#{number} #{origin}->#{destination} on #{start_at}"
   end
 
   def self.ensure_exists_from_jetblue(jetblue_flight)

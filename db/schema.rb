@@ -13,9 +13,14 @@
 ActiveRecord::Schema.define(:version => 20110807222756) do
 
   create_table "airports", :force => true do |t|
-    t.string "code",      :limit => 3
-    t.string "name"
-    t.string "city_name"
+    t.string  "code",                           :limit => 3
+    t.string  "name"
+    t.string  "city_name"
+    t.integer "flights_as_origin_count",                     :default => 0, :null => false
+    t.integer "flights_as_destination_count",                :default => 0, :null => false
+    t.integer "check_ins_as_origin_count",                   :default => 0, :null => false
+    t.integer "check_ins_as_destination_count",              :default => 0, :null => false
+    t.integer "unique_visitors_count",                       :default => 0, :null => false
   end
 
   add_index "airports", ["code"], :name => "index_airports_on_code"
@@ -49,6 +54,18 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
   add_index "flights", ["number"], :name => "index_flights_on_number"
   add_index "flights", ["origin_id"], :name => "index_flights_on_origin_id"
 
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
   create_table "tweets", :force => true do |t|
     t.integer  "user_id"
     t.string   "username"
@@ -71,13 +88,12 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.string   "website"
     t.string   "description"
     t.string   "avatar_url"
-    t.integer  "check_ins_count",                             :default => 0,    :null => false
-    t.integer  "distance_sum",                                :default => 0,    :null => false
-    t.integer  "airports_count",                              :default => 0,    :null => false
-    t.integer  "last_processed_tweet_reference", :limit => 8
-    t.boolean  "tweet_before_departure",                      :default => true, :null => false
-    t.boolean  "show_on_leaderboard",                         :default => true, :null => false
-    t.boolean  "expose_flight_history",                       :default => true, :null => false
+    t.integer  "check_ins_count",        :default => 0,    :null => false
+    t.integer  "distance_sum",           :default => 0,    :null => false
+    t.integer  "airports_count",         :default => 0,    :null => false
+    t.boolean  "tweet_before_departure", :default => true, :null => false
+    t.boolean  "show_on_leaderboard",    :default => true, :null => false
+    t.boolean  "expose_flight_history",  :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

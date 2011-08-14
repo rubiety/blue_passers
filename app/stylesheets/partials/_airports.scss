@@ -1,0 +1,26 @@
+body.airports {
+
+  header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $base_dark_color;
+    margin-bottom: 10px;
+  }
+
+  table {
+    font-size: 1.1em;
+  }
+
+  #airport-departures, #airport-arrivals {
+    clear: left;
+    float: left;
+    width: ($page_width * 0.7 - 10px);
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  #recent-checkins {
+    float: right;
+    width: ($page_width * 0.3 - 10px);
+    margin-left: 10px;
+  }
+
+}

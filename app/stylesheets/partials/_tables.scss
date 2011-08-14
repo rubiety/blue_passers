@@ -16,4 +16,9 @@ table {
   td, th {
     padding: 5px;
   }
+
+  tr.no-results {
+    font-style: italic;
+  }
+
 }
