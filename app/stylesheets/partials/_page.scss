@@ -19,8 +19,15 @@ body {
   h1 {
     background: url(../images/logo.png) left center no-repeat;
     margin: 6px 0 0 0;
-    padding-left: 80px;
+    padding-left: 85px;
     font-size: 3em;
+
+    a {
+      color: $base_dark_color;
+      text-decoration: none;
+      &:hover { color: $base_dark_color; }
+      &:visited { color: $base_dark_color; }
+    }
   }
   h2 {
     margin: 2px 0 14px 0;
