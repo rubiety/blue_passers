@@ -1,11 +1,13 @@
 %header
-  %dl
-    %dt Total Checkins:
-    %dd= @user.check_ins_count
-    %dt Total Airports:
-    %dd= @user.airports_count
-    %dt Total Distance:
-    %dd= @user.distance_sum
+  %aside
+    = link_to "Update Account Settings", edit_account_path, :id => "update-account"
+    %dl
+      %dt Total Checkins:
+      %dd= @user.check_ins_count
+      %dt Total Airports:
+      %dd= @user.airports_count
+      %dt Total Distance:
+      %dd= @user.distance_sum
 
   = image_tag @user.avatar_url
 

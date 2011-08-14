@@ -1,5 +1,8 @@
 - if current_user
+  = link_to "My Account", user_path(current_user), :class => "my-account"
+
   %h2 Welcome back, #{current_user}
+  %p Include the flight number on the day of your flight (e.g. "flight 411"), and we'll pick it up! #{link_to("Help!", page_path("help"))}
 
 - else  
   = link_to "/auth/twitter", :class => "twitter-connect" do
@@ -8,4 +11,4 @@
     = image_tag "twitter/wordmark.png", :class => "wordmark", :alt => "Twitter"
   
   %h2 Simply tweet your flight number and we'll track it!
-  %p We can also tweet the the other people checked in on your flight.
+  %p We can also tweet the the other people checked in on your flight. #{link_to("Help!", page_path("help"))}

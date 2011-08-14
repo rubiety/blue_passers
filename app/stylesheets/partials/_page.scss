@@ -74,8 +74,14 @@ body {
   
   h2 { font-size: 1.3em; }
   p { font-size: 1.12m; }
+
+  a {
+    color: $base_light_color;
+    &:hover { color: $base_light_color; }
+    &:visited { color: $base_light_color; }
+  }
   
-  a.twitter-connect {
+  a.twitter-connect, a.my-account {
     float: right;
     
     font-size: 140%;
