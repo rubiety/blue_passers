@@ -35,7 +35,8 @@
       
       #footer-wrap
         %footer
-          %p &copy; 2011 #{link_to "Ben Hughes", "http://benhughes.name/"}
+          %p
+            &copy; 2011 #{link_to "Ben Hughes", "http://benhughes.name/"} &nbsp;|&nbsp; #{link_to "Learn More", page_path("help")}
     
     -# Javascript at the bottom for fast page loading
     = render :partial => "layouts/javascripts"

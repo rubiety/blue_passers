@@ -6,8 +6,8 @@
 # e.g. ENV['GOOGLE_API_KEY'] || yml[:google_api_key]
 #
 defaults: &defaults
-  :google_account_id: 'UA-3202633-11'
-  :google_api_key: 'ABQIAAAA9i9eJP3lvywadcKyDIwkERQlz6gKE934j5Ic5I_au0KOK-1rERTIQfB0p_qPaW_NRK2fPaiJfv154Q'
+  :google_account_id: 'UA-3202633-14'
+  :google_api_key: 'ABQIAAAAh9Mg2_GIXJRr4XZmP08QwBTPWIiWB2LLL6RIcJNoOMGv8QkSXRQZ8sKm2qn4uN2Xp-l6C2Si_y1I0g'
 
 :development:
   <<: *defaults
