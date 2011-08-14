@@ -110,17 +110,17 @@ body {
   #leaderboard {
     clear: left;
     float: left;
-    width: ($page_width * 0.7 - 10px);
+    width: ($page_width * 0.6 - 10px);
     margin-right: 10px;
   }
   #recent-checkins {
     float: left;
-    width: ($page_width * 0.3 - 10px);
+    width: ($page_width * 0.4 - 10px);
     margin-left: 10px;
   }
 }
 
-#footer-wrap { background-color: $primary_color_light; }
+#footer-wrap { background-color: $primary_color; }
 footer {
   width: 960px;
   min-height: 300px;

@@ -3,16 +3,18 @@
   %table
     %thead
       %tr
-        %th &nbsp;
-        %th User
-        %th Flights
-        %th Distance
-        %th Airports
+        %th{:width => "5%"} &nbsp;
+        %th{:width => "10%"} &nbsp;
+        %th{:width => "40%"} User
+        %th{:width => "15%"} Flights
+        %th{:width => "15%"} Distance
+        %th{:width => "15%"} Airports
     %tbody
       - User.leaderboard.each_with_index do |user, i|
         - 6.times do
           %tr{:class => cycle("odd", "even")}
             %td= "#{i + 1}."
+            %td= image_tag user.avatar_url, :alt => user.handle, :height => "30px"
             %td= user.handle
             %td= user.check_ins_count
             %td= user.distance_sum
@@ -25,5 +27,6 @@
       - CheckIn.recent.each do |check_in|
         - 2.times do
           %tr{:class => cycle("odd", "even")}
+            %td= image_tag check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"
             %td= check_in.user.handle
             %td= check_in.flight
