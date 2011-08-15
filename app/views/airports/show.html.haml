@@ -1,3 +1,6 @@
+- content_for(:page_title) do
+  = "Airports | " + @airport.code_with_city_name
+
 %header
   %aside
     %dl

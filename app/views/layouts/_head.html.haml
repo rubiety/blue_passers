@@ -7,7 +7,9 @@
   %meta{ :content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible" }/
   
   %title
-    == #{ controller.controller_name.titleize } - #{ controller.action_name.titleize }
+    - if title = yield(:page_title) and title.present?
+      = "#{title} | "
+    BluePassers - Track flights and connect with other BluePass holders!
     
   %meta{ :content => "Online community and leaderboard for JetBlue BluePass Holders. Track your flights and meet other BluePassers!", :name => "description" }/
   %meta{ :content => "Ben Hughes", :name => "author" }/

@@ -1,3 +1,6 @@
+- content_for(:page_title) do 
+  = "#{@user}: #{@user.handle}"
+
 %header
   %aside
     = link_to "Update Account Settings", edit_account_path, :id => "update-account" if can?(:manage, @user)
