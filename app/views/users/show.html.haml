@@ -21,7 +21,7 @@
   - if @user.location.present?
     %h2= @user.location
   - if @user.website.present?
-    %p= link_to @user.website, @user.website
+    %p= link_to @user.website, @user.website, :rel => "nofollow"
 
   %p.description= @user.description
 
