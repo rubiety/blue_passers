@@ -6,6 +6,7 @@ class FlightsController < ApplicationController
   end
 
   def show
+    @check_ins = @flight.check_ins
   end
 
 

@@ -13,7 +13,7 @@
       %th Last Check In
   %tbody
     - @flights.each do |flight|
-      %tr
+      %tr{:class => cycle("odd", "even")}
         %td= link_to flight.number, flight
         %td= flight.origin
         %td= flight.destination

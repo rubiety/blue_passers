@@ -15,6 +15,7 @@ body {
   padding: 0;
   position: relative;
   border: none;
+  @include clearfix;
   
   h1 {
     background: url(../images/logo.png) left center no-repeat;
@@ -41,7 +42,7 @@ body {
   }
   nav {
     position: absolute;
-    bottom: 2px;
+    bottom: 12px;
     right: 2px;
     color: $primary_color;
     
@@ -124,7 +125,7 @@ body {
 
 #main-content-wrap {
   margin-bottom: 20px;
-  min-height: 600px;
+  min-height: 450px;
 }
 #main-content {
   width: $page_width;

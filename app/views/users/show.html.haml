@@ -30,17 +30,17 @@
     %table
       %thead
         %tr
-          %th{:width => "20%"} Flight
-          %th{:width => "20%"} From
-          %th{:width => "20%"} To
-          %th{:width => "20%"} Departure
-          %th{:width => "20%"} Arrival
+          %th{:width => "5%"} #
+          %th{:width => "25%"} From
+          %th{:width => "24%"} To
+          %th{:width => "23%"} Departure
+          %th{:width => "23%"} Arrival
       %tbody
         - @flights.each do |flight|
           %tr
             %td= link_to flight.number, flight
-            %td= flight.origin
-            %td= flight.destination
+            %td= link_to flight.origin.code_with_city_name, flight.origin
+            %td= link_to flight.destination.code_with_city_name, flight.destination
             %td= flight.start_at
             %td= flight.end_at
         - if @flights.empty?
@@ -56,7 +56,7 @@
           %tr{:class => cycle("odd", "even")}
             %td{:width => "20%"}= link_to airport, airport
             %td{:width => "60%"}= link_to airport.city_name, airport
-            %td{:width => "20%"}= "x#{airport.check_ins_count}"
+            %td{:width => "20%"}= "x 1" # TODO
         - if @airports.empty?
           %tr.no-results
             %td{:colspan => 3} No results found.

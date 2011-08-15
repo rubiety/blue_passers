@@ -1,16 +1,25 @@
 class Flight < ActiveRecord::Base
   belongs_to :origin, :class_name => "Airport", :counter_cache => :flights_as_origin_count
   belongs_to :destination, :class_name => "Airport", :counter_cache => :flights_as_destination_count
+  has_many :check_ins
 
   scope :recent, order("last_check_in_at desc")
 
-  has_friendly_id :to_s, :use_slug => true
+  has_friendly_id :description, :use_slug => true
 
   def self.by_number_and_day(number, date)
     where(:number => number).where("DATE(start_at) = DATE(?)", date).first
   end
 
+  def self.upcoming_by_number(number, time)
+    where(:number => number).where("start_at >= ? AND start_at <= ?", (time - 2.hours), (time + 22.hours)).first
+  end
+
   def to_s
+    "#{number} #{origin}->#{destination}"
+  end
+
+  def description
     "#{number} #{origin}->#{destination} on #{start_at}"
   end
 

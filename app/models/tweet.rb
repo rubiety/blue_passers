@@ -4,6 +4,9 @@ class Tweet < ActiveRecord::Base
 
   default_scope order("id desc")
   scope :with_check_ins, where("check_ins_count > 0")
+  
+  FLIGHT_MATCHER = /(\#\d+|\#JBU\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
+  ALLOW_CHECK_IN_RANGE = Date.new(2011, 8, 1)..Date.new(2011, 12, 31)  # TODO: Adjust for actual time range
 
   def self.from_twitter(raw_tweet)
     the_user = User.find_by_username(raw_tweet.user.screen_name)
@@ -20,18 +23,34 @@ class Tweet < ActiveRecord::Base
 
   def process_check_ins
     return unless user
+    return unless ALLOW_CHECK_IN_RANGE === tweeted_at.to_date
 
-    text.scan(/(\#JBU\d+|Flight ?\d+)/i).flatten.each do |flight_reference|
+    FlightMaster.logger.info "  Processing Tweet [#{id}] on #{tweeted_at}: \"#{text}\"..."
+
+    text.scan(FLIGHT_MATCHER).flatten.each do |flight_reference|
+      FlightMaster.logger.info "    Found Reference: \"#{flight_reference}\""
+
       flight_reference.gsub!(/[^0-9]/, "")
 
-      if jetblue_flight = JetBlue::Flight.by_number(flight_reference)
-        flight = Flight.ensure_exists_from_jetblue(jetblue_flight)
-        
-        user.check_ins.create!(
-          :flight => flight,
-          :tweet => self
-        )
+      begin
+        if flight = Flight.upcoming_by_number(flight_reference, tweeted_at)
+          FlightMaster.logger.info "      Found existing flight for #{flight_reference}: [#{flight.id}] #{flight.to_s}"
+          user.check_ins.create!(:flight => flight, :tweet => self)
+
+        elsif jetblue_flight = JetBlue::Flight.upcoming_by_number(flight_reference, tweeted_at)
+          FlightMaster.logger.info "      Found flight on JetBlue for #{flight_reference}: #{jetblue_flight.to_s}"
+          flight = Flight.ensure_exists_from_jetblue(jetblue_flight)
+
+          FlightMaster.logger.info "        Created flight from JetBlue #{flight_reference}: [#{flight.id}] #{flight.to_s}"
+          user.check_ins.create!(:flight => flight, :tweet => self)
+        else
+          FlightMaster.logger.info "      !! Could not find flight for #{flight_reference} on #{tweeted_at}"
+        end
+
+      #rescue ArgumentError => e
+      #  FlightMaster.logger.info "      !! ArgumentError: #{e.to_s}"
       end
+      
     end
   end
 end

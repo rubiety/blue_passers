@@ -23,6 +23,8 @@ class CheckIn < ActiveRecord::Base
 
   def update_airport_stats
     flight.origin.try(:update_check_ins_count)
-    flight.destination.try(:update_check_ins_acount)
+    flight.origin.try(:update_unique_visitors_count)
+    flight.destination.try(:update_check_ins_count)
+    flight.destination.try(:update_unique_visitors_count)
   end
 end

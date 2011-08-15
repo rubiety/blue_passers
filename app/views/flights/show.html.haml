@@ -1,0 +1,18 @@
+%header
+  %h1= @flight.description
+
+
+%section#recent-checkins
+  %h2 Recent Checkins
+  %table
+    %tbody
+      - @check_ins.each do |check_in|
+        %tr{:class => cycle("odd", "even")}
+          %td= link_to image_tag(check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"), check_in.user
+          %td= link_to check_in.user.handle, check_in.user
+          %td= link_to check_in.flight, check_in.flight
+      - if @check_ins.empty?
+        %tr.no-results
+          %td{:colspan => 3} No results found.
+
+

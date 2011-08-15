@@ -2,7 +2,7 @@ class AirportsController < ApplicationController
   before_filter :find_airport, :except => [:index]
 
   def index
-    @airports = Airport.all
+    @airports = Airport.ordered_by_checkins
   end
 
   def show

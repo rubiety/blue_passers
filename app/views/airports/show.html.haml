@@ -1,4 +1,13 @@
 %header
+  %aside
+    %dl
+      %dt Total Flights:
+      %dd= @airport.flights_count
+      %dt Total Check Ins:
+      %dd= @airport.check_ins_count
+      %dt Unique Visitors:
+      %dd= @airport.unique_visitors_count
+
   %h1= @airport.code_with_city_name
   %h2= @airport.name
 
@@ -9,9 +18,9 @@
     %tbody
       - @check_ins.each do |check_in|
         %tr{:class => cycle("odd", "even")}
-          %td= image_tag check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"
-          %td= check_in.user.handle
-          %td= check_in.flight
+          %td= link_to image_tag(check_in.user.avatar_url, :alt => check_in.user.handle, :height => "30px"), check_in.user
+          %td= link_to check_in.user.handle, check_in.user
+          %td= link_to check_in.flight, check_in.flight
       - if @check_ins.empty?
         %tr.no-results
           %td{:colspan => 3} No results found.
@@ -22,19 +31,18 @@
   %table
     %thead
       %tr
-        %th{:width => "7%"} Flight
+        %th{:width => "5%"} #
         %th{:width => "30%"} To
-        %th{:width => "20%"} Departure
-        %th{:width => "20%"} Arrival
-        %th{:width => "13%"} On Flight
+        %th{:width => "25%"} Departure
+        %th{:width => "25%"} Arrival
+        %th{:width => "15%"} On Flight
     %tbody
       - @flights_as_origin.recent.each do |flight|
-        %tr
+        %tr{:class => cycle("odd", "even")}
           %td= link_to flight.number, flight
-          %td= flight.destination
+          %td= flight.destination.code_with_city_name
           %td= flight.start_at
           %td= flight.end_at
-          %td= pluralize(flight.distance, "mile")
           %td= pluralize(flight.check_ins_count, "user")
       - if @flights_as_origin.empty?
         %tr.no-results
@@ -46,19 +54,18 @@
   %table
     %thead
       %tr
-        %th{:width => "7%"} Flight
-        %th{:width => "30%"} To
-        %th{:width => "20%"} Departure
-        %th{:width => "20%"} Arrival
-        %th{:width => "13%"} On Flight
+        %th{:width => "5%"} #
+        %th{:width => "30%"} From
+        %th{:width => "25%"} Departure
+        %th{:width => "25%"} Arrival
+        %th{:width => "15%"} On Flight
     %tbody
       - @flights_as_destination.recent.each do |flight|
-        %tr
+        %tr{:class => cycle("odd", "even")}
           %td= link_to flight.number, flight
-          %td= flight.origin
+          %td= flight.origin.code_with_city_name
           %td= flight.start_at
           %td= flight.end_at
-          %td= pluralize(flight.distance, "mile")
           %td= pluralize(flight.check_ins_count, "user")
       - if @flights_as_destination.empty?
         %tr.no-results

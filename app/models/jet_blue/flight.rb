@@ -14,6 +14,18 @@ class JetBlue::Flight
     end
   end
 
+  def to_s
+    "#{number} #{origin_airport_code}->#{destination_airport_code} on #{start_at}"
+  end
+
+  def self.upcoming_by_number(number, time = Time.now)
+    if todays_flight = by_number(number, time.to_date)
+      todays_flight
+    elsif tomorrows_flight = by_number(number, time.to_date + 1.day)
+      tomorrows_flight
+    end
+  end
+
   def self.by_number(number, date = Time.now)
     mechanize = Mechanize.new
     mechanize.get "http://www.jetblue.com/flightstatus/flightstatussched.aspx?FlightDate=#{date.strftime('%m/%d/%Y')}&FlightNum=#{number}" do |page|
