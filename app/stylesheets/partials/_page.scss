@@ -3,9 +3,22 @@ body {
   padding: 0;
 }
 
+// Reverse stupid H5BP pink selection color:
+::selection {
+  background: #333;
+  color: white;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #333;
+  color: white;
+  text-shadow: none;
+}
+
 .container {
   font-family: Georgia, Verdana, Arial, sans-serif;
   color: $base_dark_color;
+
 }
 
 #header-wrap {  }
