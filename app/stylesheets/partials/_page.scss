@@ -36,13 +36,24 @@ body {
   }
   cite {
     position: absolute;
-    top: 10px;
+    top: 38px;
     right: 2px;
     font-size: 0.9em;
   }
+
+  div.addthis_toolbox {
+    position: absolute;
+    top: 6px;
+    right: 2px;
+
+    .addthis_button_expanded {
+      color: #333;
+    }
+  }
+  
   nav {
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     right: 2px;
     color: $primary_color;
     
@@ -90,7 +101,7 @@ body {
     &:hover { color: $base_light_color; }
     &:visited { color: $base_light_color; }
   }
-  
+
   a.twitter-connect, a.my-account {
     float: right;
     

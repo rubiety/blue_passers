@@ -10,7 +10,8 @@
     Sign in with
     = image_tag "twitter/wordmark.png", :class => "wordmark", :alt => "Twitter"
   
-  %h2 Simply tweet your flight number and we'll track it!
+  %h2
+    Tweet your flight number and we'll track it! &nbsp;&nbsp;
+    = link_to("Learn More...", page_path("help"))
   %p 
     We can also tweet the the other people checked in on your flight. &nbsp;&nbsp;
-    = link_to("Learn More...", page_path("help"))

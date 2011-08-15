@@ -12,6 +12,8 @@
 
       #header-wrap
         %header#header
+          = render "layouts/share_this_page"
+
           %cite Note: This site is not affiliated with JetBlue Airways Corporation
           %nav
             %ul
@@ -36,7 +38,10 @@
       #footer-wrap
         %footer
           %p
-            &copy; 2011 #{link_to "Ben Hughes", "http://benhughes.name/"} &nbsp;|&nbsp; #{link_to "Learn More", page_path("help")}
+            &copy; 2011 #{link_to "Ben Hughes", "http://benhughes.name/"} 
+            &nbsp;|&nbsp; #{link_to "Learn More", page_path("help")}
+            &nbsp;|&nbsp; #{link_to "Privacy", page_path("privacy")}
+            &nbsp;|&nbsp; With Inspiration From #{link_to "AirTracker by Flymodo", "http://aycj.flymodo.com/"}
     
     -# Javascript at the bottom for fast page loading
     = render :partial => "layouts/javascripts"
