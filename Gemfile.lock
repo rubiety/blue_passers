@@ -114,6 +114,9 @@ GEM
       railties (~> 3.0)
     hashie (1.0.0)
     highline (1.6.2)
+    hoptoad_notifier (2.4.11)
+      activesupport
+      builder
     html5-boilerplate (1.0.0)
       compass (>= 0.11.1)
     i18n (0.5.0)
@@ -299,6 +302,7 @@ DEPENDENCIES
   guard-spork
   haml
   haml-rails
+  hoptoad_notifier
   html5-boilerplate
   launchy
   mechanize

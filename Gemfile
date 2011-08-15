@@ -8,6 +8,7 @@ gem "haml-rails"
 gem "compass"
 gem "html5-boilerplate"
 gem "cancan"
+gem "hoptoad_notifier"
 
 gem "omniauth", "~> 0.2.6"
 gem "twitter"
