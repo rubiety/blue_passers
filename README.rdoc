@@ -16,8 +16,8 @@ The +FlightMaster+ class directs tweet consumption, simple 1 minute polling of h
 
 Shamefully, the test suite needs major updating (had to get this released ASAP), but:
 
-$ bundle exec rspec spec
-$ bundle exec cucumber features
+  $ bundle exec rspec spec
+  $ bundle exec cucumber features
 
 Or if you'd prefer to use guard running RSpec/Cucumber + Spork:
 
