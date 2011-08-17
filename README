@@ -1,3 +1,24 @@
-== Blue Passers
+= Blue Passers
 
-This is a small web application using Twitter authentication to track flights made on the JetBlue BluePass and present results in a leader board.
+This is a small Rails 3 application using Twitter authentication to track flights made on the JetBlue BluePass and present results in a leader board.
+
+Tools used:
+* Rails 3.0
+* HAMLized html5_boilerplate
+* SASS (SCSS) & Compass
+* OmniAuth
+
+== Twitter
+
+The +FlightMaster+ class directs tweet consumption, simple 1 minute polling of home tweets and direct messages.
+
+== Tests
+
+Shamefully, the test suite needs major updating (had to get this released ASAP), but:
+
+$ bundle exec rspec spec
+$ bundle exec cucumber features
+
+Or if you'd prefer to use guard running RSpec/Cucumber + Spork:
+
+$ bundle exec guard
