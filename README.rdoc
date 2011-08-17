@@ -21,4 +21,4 @@ Shamefully, the test suite needs major updating (had to get this released ASAP),
 
 Or if you'd prefer to use guard running RSpec/Cucumber + Spork:
 
-$ bundle exec guard
+  $ bundle exec guard
