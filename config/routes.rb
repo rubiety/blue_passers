@@ -5,7 +5,10 @@ BluePassers::Application.routes.draw do
   resources :pages
   resources :airports
   resources :flights
-  resources :users
+  resources :users do
+    resources :check_ins
+  end
+
   resource :account
   resource :session
 

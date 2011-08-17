@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @flights = @user.flights
+    @check_ins = @user.check_ins
     @airports = @user.airports
   end
 end

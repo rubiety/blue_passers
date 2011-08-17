@@ -38,17 +38,21 @@
           %th{:width => "24%"} To
           %th{:width => "23%"} Departure
           %th{:width => "23%"} Arrival
+          - if can?(:manage, @user)
+            %th{:width => "8%"} &nbsp;
             
       %tbody
-        - @flights.each do |flight|
+        - @check_ins.each do |check_in|
           %tr
-            %td= link_to flight.number, flight
-            %td= link_to flight.origin.code_with_city_name, flight.origin
-            %td= link_to flight.destination.code_with_city_name, flight.destination
-            %td= flight.start_at
-            %td= flight.end_at
+            %td= link_to check_in.flight.number, check_in.flight
+            %td= link_to check_in.flight.origin.code_with_city_name, check_in.flight.origin
+            %td= link_to check_in.flight.destination.code_with_city_name, check_in.flight.destination
+            %td= check_in.flight.start_at
+            %td= check_in.flight.end_at
+            - if can?(:manage, @user)
+              %td{:width => "8%"}= link_to "Remove", user_check_in_path(@user, check_in), :method => :delete, :confirm => "Are you sure you want to remove this flight from your history?"
 
-        - if @flights.empty?
+        - if @check_ins.empty?
           %tr.no-results
             %td{:colspan => 5} No results found.
 
