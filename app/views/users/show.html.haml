@@ -38,6 +38,7 @@
           %th{:width => "24%"} To
           %th{:width => "23%"} Departure
           %th{:width => "23%"} Arrival
+            
       %tbody
         - @flights.each do |flight|
           %tr
@@ -46,6 +47,7 @@
             %td= link_to flight.destination.code_with_city_name, flight.destination
             %td= flight.start_at
             %td= flight.end_at
+
         - if @flights.empty?
           %tr.no-results
             %td{:colspan => 5} No results found.

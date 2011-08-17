@@ -5,7 +5,7 @@ class Tweet < ActiveRecord::Base
   default_scope order("id desc")
   scope :with_check_ins, where("check_ins_count > 0")
   
-  FLIGHT_MATCHER = /(\#\d+|\#JBU\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
+  FLIGHT_MATCHER = /(\#\d+|\#J6\d+|\#B\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
   ALLOW_CHECK_IN_RANGE = Date.new(2011, 8, 1)..Date.new(2011, 12, 31)  # TODO: Adjust for actual time range
 
   def self.from_twitter(raw_tweet)
@@ -47,8 +47,8 @@ class Tweet < ActiveRecord::Base
           FlightMaster.logger.info "      !! Could not find flight for #{flight_reference} on #{tweeted_at}"
         end
 
-      #rescue ArgumentError => e
-      #  FlightMaster.logger.info "      !! ArgumentError: #{e.to_s}"
+      rescue ArgumentError => e
+        FlightMaster.logger.info "      !! ArgumentError: #{e.to_s}"
       end
       
     end
