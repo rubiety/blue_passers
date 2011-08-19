@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807222756) do
+ActiveRecord::Schema.define(:version => 20110817032934) do
 
   create_table "airports", :force => true do |t|
     t.string  "code",                           :limit => 3
@@ -74,7 +74,8 @@ ActiveRecord::Schema.define(:version => 20110807222756) do
     t.string   "reply_to_username"
     t.datetime "tweeted_at"
     t.datetime "created_at"
-    t.integer  "check_ins_count",   :default => 0, :null => false
+    t.integer  "check_ins_count",   :default => 0,     :null => false
+    t.boolean  "private",           :default => false, :null => false
   end
 
   create_table "users", :force => true do |t|

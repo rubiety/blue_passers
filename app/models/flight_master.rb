@@ -27,10 +27,14 @@ class FlightMaster
   end
 
   def self.home_timeline(options = {})
-    options = options.except(:since_id) if options[:since_id].nil? # Twitter gem doesn't like empty references
-
     with_twitter do
       Twitter.home_timeline(options)
+    end
+  end
+
+  def self.direct_messages(options = {})
+    with_twitter do
+      Twitter.direct_messages(options)
     end
   end
 
@@ -47,15 +51,26 @@ class FlightMaster
   end
 
   def self.consume_tweets
-    since_id = Tweet.first.try(:reference)
-    logger.info "[#{Time.zone.now}] Consuming Tweets Since [#{since_id}]"
+    tweet_since_id = Tweet.public.first.try(:reference)
+    logger.info "[#{Time.zone.now}] Consuming Tweets Since [#{tweet_since_id}]"
 
-    tweets = home_timeline(:since_id => since_id, :count => TWEET_CONSUMPTION_LIMIT).reverse
+    tweets = home_timeline(:since_id => tweet_since_id || 0, :count => TWEET_CONSUMPTION_LIMIT).reverse
     tweets.each do |raw|
       Tweet.from_twitter(raw).process_check_ins
     end
 
     logger.info "[#{Time.zone.now}] Tweet Consumption Complete"
+    logger.info ""
+
+    dm_since_id = Tweet.private.first.try(:reference)
+    logger.info "[#{Time.zone.now}] Consuming Direct Messages Since [#{dm_since_id}]"
+
+    dms = direct_messages(:since_id => dm_since_id || 0, :count => TWEET_CONSUMPTION_LIMIT).reverse
+    dms.each do |raw|
+      Tweet.from_direct_message(raw).process_check_ins
+    end
+
+    logger.info "[#{Time.zone.now}] Direct Message Consumption Complete"
     logger.info ""
   end
 

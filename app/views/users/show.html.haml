@@ -40,7 +40,7 @@
           %th{:width => "23%"} Arrival
           - if can?(:manage, @user)
             %th{:width => "8%"} &nbsp;
-            
+      
       %tbody
         - @check_ins.each do |check_in|
           %tr

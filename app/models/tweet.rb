@@ -4,6 +4,8 @@ class Tweet < ActiveRecord::Base
 
   default_scope order("id desc")
   scope :with_check_ins, where("check_ins_count > 0")
+  scope :private, where(:private => true)
+  scope :public, where(:private => false)
   
   FLIGHT_MATCHER = /(\#\d+|\#J6\d+|\#B\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
   ALLOW_CHECK_IN_RANGE = Date.new(2011, 8, 1)..Date.new(2011, 12, 31)  # TODO: Adjust for actual time range
@@ -12,12 +14,26 @@ class Tweet < ActiveRecord::Base
     the_user = User.find_by_username(raw_tweet.user.screen_name)
 
     create!(
+      :private => false,
       :user => the_user,
       :username => raw_tweet.user.screen_name,
       :text => raw_tweet.text,
       :reference => raw_tweet.id_str,
       :reply_to_username => raw_tweet.in_reply_to_screen_name,
       :tweeted_at => DateTime.parse(raw_tweet.created_at)
+    )
+  end
+
+  def self.from_direct_message(raw_dm)
+    the_user = User.find_by_username(raw_dm.sender_screen_name)
+
+    create!(
+      :private => true,
+      :user => the_user,
+      :username => raw_dm.sender_screen_name,
+      :text => raw_dm.text,
+      :reference => raw_dm.id_str,
+      :tweeted_at => DateTime.parse(raw_dm.created_at)
     )
   end
 
