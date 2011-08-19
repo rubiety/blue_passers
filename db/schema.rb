@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817032934) do
+ActiveRecord::Schema.define(:version => 20110819053248) do
 
   create_table "airports", :force => true do |t|
     t.string  "code",                           :limit => 3
@@ -46,8 +46,9 @@ ActiveRecord::Schema.define(:version => 20110817032934) do
     t.datetime "end_at"
     t.datetime "actual_end_at"
     t.integer  "distance"
-    t.integer  "check_ins_count",  :default => 0, :null => false
+    t.integer  "check_ins_count",       :default => 0, :null => false
     t.datetime "last_check_in_at"
+    t.datetime "tweeted_passengers_at"
   end
 
   add_index "flights", ["destination_id"], :name => "index_flights_on_destination_id"

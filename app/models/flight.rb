@@ -1,9 +1,15 @@
 class Flight < ActiveRecord::Base
+  NOTIFY_MINUTES = 40
+
   belongs_to :origin, :class_name => "Airport", :counter_cache => :flights_as_origin_count
   belongs_to :destination, :class_name => "Airport", :counter_cache => :flights_as_destination_count
   has_many :check_ins
+  has_many :users, :through => :check_ins
 
   scope :recent, order("last_check_in_at desc")
+  scope :for_tweet_notification, lambda {
+    where(:tweeted_passengers_at => nil).where("start_at BETWEEN ? AND ?", Time.zone.now, NOTIFY_MINUTES.minutes.from_now).where("check_ins_count > 1")
+  }
 
   has_friendly_id :description, :use_slug => true
 
@@ -36,5 +42,9 @@ class Flight < ActiveRecord::Base
         :distance => 2000
       )
     end
+  end
+
+  def tweeted_passengers!
+    update_attribute(:tweeted_passengers_at, Time.zone.now)
   end
 end
