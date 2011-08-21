@@ -9,6 +9,8 @@ class CheckIn < ActiveRecord::Base
 
   after_create :update_user_stats
   after_create :update_airport_stats
+  after_destroy :update_user_stats
+  after_destroy :update_airport_stats
   
   def to_s
     "#{user} on #{flight}"
