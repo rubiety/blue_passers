@@ -7,7 +7,7 @@ class Tweet < ActiveRecord::Base
   scope :private, where(:private => true)
   scope :public, where(:private => false)
   
-  FLIGHT_MATCHER = /(\#\d+|\#J6\d+|\#B\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
+  FLIGHT_MATCHER = /(\#\d+|\#B6\d+|\#JBU\d+|Flight ?\d+|JetBlue ?\d+|Flt ?\d+)/i
   ALLOW_CHECK_IN_RANGE = Date.new(2011, 8, 21)..Date.new(2011, 11, 23)
 
   def local_tweeted_at
