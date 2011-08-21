@@ -20,11 +20,11 @@
         %td= link_to flight.number, flight
         %td= flight.origin
         %td= flight.destination
-        %td= flight.start_at
-        %td= flight.end_at
-        %td= pluralize(flight.distance, "mile")
+        %td= flight.local_start_at
+        %td= flight.local_end_at
+        %td= number_with_delimiter(flight.distance) + " miles"
         %td= pluralize(flight.check_ins_count, "user")
-        %td= flight.last_check_in_at
+        %td= flight.local_last_check_in_at
     - if @flights.empty?
       %tr.no-results
         %td{:colspan => 8} No results found.

@@ -2,181 +2,590 @@
 - code: BQN
   name: Rafael Hernandez Airport
   city_name: Aguadilla
+  latitude: 18.494861
+  longitude: -67.129444
+  altitude: 237
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: AUA
   name: Queen Beatrix International Airport
   city_name: Aruba
+  latitude: 12.501389
+  longitude: -70.015221
+  altitude: 60
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: AUS
   name: Austin Bergstrom International Airport
   city_name: Austin, TX
+  latitude: 30.194528
+  longitude: -97.669889
+  altitude: 542
+  time_zone_offset: -6
+  time_zone_name: "Central Time (US & Canada)"
+  dst: A
+
 - code: BWI
   name: Baltimore/Washington International Thurgood Marshal Airport
   city_name: Baltimore, MD
+  latitude: 39.175361
+  longitude: -76.668333
+  altitude: 146
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: BGI
   name: Sir Grantley Adams International Airport
   city_name: Barbados
+  latitude: 13.074603
+  longitude: -59.492456
+  altitude: 169
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: BDA
   name: L.F. Wade International International Airport
   city_name: Bermuda
+  latitude: 32.364042
+  longitude: -64.678703
+  altitude: 12
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: BOG
   name: El Dorado International Airport
   city_name: Bogata, Columbia
+  latitude: 4.701594
+  longitude: -74.146947
+  altitude: 8361
+  time_zone_offset: -5
+  time_zone_name: "Bogota"
+  dst: U
+
 - code: BOS
   name: General Edward Lawrence Logan International Airport
   city_name: Boston, MA
+  latitude: 42.364347
+  longitude: -71.005181
+  altitude: 19
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: BUF
   name: Buffalo Niagara International Airport
   city_name: Buffalo, NY
+  latitude: 42.940525
+  longitude: -78.732167
+  altitude: 724
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: BUR
   name: Bob Hope Airport
   city_name: Burbank, CA
+  latitude: 34.200667
+  longitude: -118.358667
+  altitude: 778
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: BTV
   name: Burlington International Airport
   city_name: Burlington, VT
+  latitude: 44.471861
+  longitude: -73.153278
+  altitude: 335
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: CUN
   name: Cancun International Airport
   city_name: Cancun
+  latitude: 21.036528
+  longitude: -86.877083
+  altitude: 20
+  time_zone_offset: -6
+  time_zone_name: "Monterrey"
+  dst: S
+
 - code: CLT
   name: Charlotte Douglas International Airport
   city_name: Charlotte, NC
+  latitude: 35.214
+  longitude: -80.943139
+  altitude: 748
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: ORD
   name: Chicago O'Hare International Airport
   city_name: Chicago, IL
+  latitude: 41.978603
+  longitude: -87.904842
+  altitude: 668
+  time_zone_offset: -6
+  time_zone_name: "Central Time (US & Canada)"
+  dst: A
+
 - code: DEN
   name: Denver International Airport
   city_name: Denver, CO
+  latitude: 39.861656
+  longitude: -104.673178
+  altitude: 5431
+  time_zone_offset: -7
+  time_zone_name: "Mountain Time (US & Canada)"
+  dst: A
+
 - code: FLL
   name: Fort Lauderdale Hollywood International Airport
   city_name: Fort Lauderdale, FL
+  latitude: 26.072583
+  longitude: -80.15275
+  altitude: 9
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: RSW
   name: Southwest Florida International Airport
   city_name: Fort Myers, FL
+  latitude: 26.536167
+  longitude: -81.755167
+  altitude: 30
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: BDL
   name: Bradley International Airport
   city_name: Hartford, CT
+  latitude: 41.938889
+  longitude: -72.683222
+  altitude: 173
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: HOU
   name: William P Hobby Airport
   city_name: Houston, TX
+  latitude: 29.645419
+  longitude: -95.278889
+  altitude: 46
+  time_zone_offset: -6
+  time_zone_name: "Central Time (US & Canada)"
+  dst: A
+
 - code: JAX
   name: Jacksonville International Airport
   city_name: Jacksonville, FL
+  latitude: 30.494056
+  longitude: -81.687861
+  altitude: 30
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: KIN
   name: Norman Manley International Airport
   city_name: Kingston
+  latitude: 17.935667
+  longitude: -76.7875
+  altitude: 10
+  time_zone_offset: -5
+  time_zone_name: "Bogota"
+  dst: U
+
 - code: LAS
   name: McCarran International Airport
   city_name: Las Vegas, NV
+  latitude: 36.080056
+  longitude: -115.15225
+  altitude: 2141
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: LGB
   name: Long Beach Airport
   city_name: Long Beach, CA
+  latitude: 33.817722
+  longitude: -118.151611
+  altitude: 60
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: LAX
   name: Los Angeles International Airport
   city_name: Los Angeles, CA
+  latitude: 33.942536
+  longitude: -118.408075
+  altitude: 126
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: MBJ
   name: Sangster International Airport
   city_name: Montego Bay, Jamaica
+  latitude: 18.503717
+  longitude: -77.913358
+  altitude: 4
+  time_zone_offset: -5
+  time_zone_name: "Bogota"
+  dst: U
+
 - code: NAS
   name: Lynden Pindling International Airport
   city_name: Nassau, Bahamas
+  latitude: 25.038958
+  longitude: -77.466231
+  altitude: 16
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: U
+
 - code: MSY
   name: Louis Armstrong New Orleans International Airport
   city_name: New Orleans, LA
+  latitude: 29.993389
+  longitude: -90.258028
+  altitude: 4
+  time_zone_offset: -6
+  time_zone_name: "Central Time (US & Canada)"
+  dst: A
+
 - code: LGA
   name: La Guardia Airport
   city_name: New York, NY
+  latitude: 40.777245
+  longitude: -73.872608
+  altitude: 22
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: JFK
   name: John F Kennedy International Airport
   city_name: New York, NY
+  latitude: 40.639751
+  longitude: -73.778925
+  altitude: 13
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: EWR
   name: Newark Liberty International Airport
   city_name: Newark, NJ
+  latitude: 40.6925
+  longitude: -74.168667
+  altitude: 18
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: SWF
   name: Stewart International Airport
   city_name: Newburgh, NJ
+  latitude: 41.504094
+  longitude: -74.104839
+  altitude: 491
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: OAK
   name: Metropolitan Oakland International Airport
   city_name: Oakland, CA
+  latitude: 37.721278
+  longitude: -122.220722
+  altitude: 9
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: MCO
   name: Orlando International Airport
   city_name: Orlando, FL
+  latitude: 28.429394
+  longitude: -81.308994
+  altitude: 96
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: PHX
   name: Phoenix Sky Harbor International Airport
   city_name: Phoenix, AZ
+  latitude: 33.434278
+  longitude: -112.011583
+  altitude: 1135
+  time_zone_offset: -7
+  time_zone_name: "Mountain Time (US & Canada)"
+  dst: N
+
 - code: PIT
   name: Pittsburgh International Airport
   city_name: Pittsburgh, PA
+  latitude: 40.491467
+  longitude: -80.232872
+  altitude: 1204
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: PSE
   name: Mercedita Airport
   city_name: Ponce, PR
-- code: PWM
-  name: Portland International Jetport Airport
-  city_name: Portland, ME
+  latitude: 18.008306
+  longitude: -66.563028
+  altitude: 29
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: PDX
   name: Portland International Airport
   city_name: Portland, OR
+  latitude: 45.588722
+  longitude: -122.5975
+  altitude: 30
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: POP
   name: Gregorio Luperon International Airport
   city_name: Puerto Plata, D.R.
+  latitude: 19.7579
+  longitude: -70.570033
+  altitude: 15
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: PUJ
   name: Punta Cana International Airport
   city_name: Punta Cana, D.R.
+  latitude: 18.567367
+  longitude: -68.363431
+  altitude: 47
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: RDU
   name: Raleigh Durham International Airport
   city_name: Raleigh, NC
+  latitude: 35.877639
+  longitude: -78.787472
+  altitude: 435
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: RIC
   name: Richmond International Airport
   city_name: Richmond, VA
+  latitude: 37.505167
+  longitude: -77.319667
+  altitude: 167
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: ROC
   name: Greater Rochester International Airport
   city_name: Rochester, NY
+  latitude: 43.118866
+  longitude: -77.672389
+  altitude: 559
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: SMF
   name: Sacramento International Airport
   city_name: Sacramento, CA
+  latitude: 38.695417
+  longitude: -121.590778
+  altitude: 27
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: SLC
   name: Salt Lake City International Airport
   city_name: Salt Lake City, UT
+  latitude: 40.788389
+  longitude: -111.977772
+  altitude: 4227
+  time_zone_offset: -7
+  time_zone_name: "Mountain Time (US & Canada)"
+  dst: A
+
 - code: SAN
   name: San Diego International Airport
   city_name: San Diego, CA
+  latitude: 32.733556
+  longitude: -117.189667
+  altitude: 17
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: SFO
   name: San Francisco International Airport
   city_name: San Francisco, CA
+  latitude: 37.618972
+  longitude: -122.374889
+  altitude: 13
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: SJC
   name: Norman Y. Mineta San Jose International Airport
   city_name: San Jose, CA
+  latitude: 37.3626
+  longitude: -121.929022
+  altitude: 62
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: SJU
   name: Luis Munoz Marin International Airport
   city_name: San Juan, PR
+  latitude: 18.439417
+  longitude: -66.001833
+  altitude: 9
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: STI
   name: Cibao International Airport
   city_name: Santiago, D.R.
+  latitude: 19.406092
+  longitude: -70.604689
+  altitude: 565
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: SDQ
   name: Las Americas International Airport
   city_name: Santo Domingo, D.R.
+  latitude: 18.429664
+  longitude: -69.668925
+  altitude: 59
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: SRQ
   name: Sarasota Bradenton International Airport
   city_name: Sarasota, FL
+  latitude: 27.395444
+  longitude: -82.554389
+  altitude: 30
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: SEA
   name: Seattle Tacoma International Airport
   city_name: Seattle, WA
+  latitude: 47.449
+  longitude: -122.309306
+  altitude: 433
+  time_zone_offset: -8
+  time_zone_name: "Pacific Time (US & Canada)"
+  dst: A
+
 - code: UVF
   name: Hewanorra International Airport
   city_name: St. Lucia
+  latitude: 13.733194
+  longitude: -60.952597
+  altitude: 14
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: SXM
   name: Princess Juliana International Airport
   city_name: St. Maarten
+  latitude: 18.040953
+  longitude: -63.1089
+  altitude: 14
+  time_zone_offset: -4
+  time_zone_name: "Atlantic Time (Canada)"
+  dst: U
+
 - code: SYR
   name: Syracuse Hancock International Airport
   city_name: Syracuse, NY
+  latitude: 43.111187
+  longitude: -76.106311
+  altitude: 421
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: TPA
   name: Tampa International Airport
   city_name: Tampa, FL
+  latitude: 27.975472
+  longitude: -82.53325
+  altitude: 26
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: IAD
   name: Washington Dulles International Airport
   city_name: Washington, DC
+  latitude: 38.944533
+  longitude: -77.455811
+  altitude: 313
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: DCA
   name: Ronald Reagan Washington National Airport
   city_name: Washington, DC
+  latitude: 38.852083
+  longitude: -77.037722
+  altitude: 15
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
+
 - code: PBI
   name: Palm Beach International Airport
   city_name: West Palm Beach, FL
+  latitude: 26.683161
+  longitude: -80.095589
+  altitude: 19
+  time_zone_offset: -5
+  time_zone_name: "Eastern Time (US & Canada)"
+  dst: A
 

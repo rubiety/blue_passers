@@ -47,8 +47,8 @@
             %td= link_to check_in.flight.number, check_in.flight
             %td= link_to check_in.flight.origin.code_with_city_name, check_in.flight.origin
             %td= link_to check_in.flight.destination.code_with_city_name, check_in.flight.destination
-            %td= check_in.flight.start_at
-            %td= check_in.flight.end_at
+            %td= check_in.flight.local_start_at
+            %td= check_in.flight.local_end_at
             - if can?(:manage, @user)
               %td{:width => "8%"}= link_to "Remove", user_check_in_path(@user, check_in), :method => :delete, :confirm => "Are you sure you want to remove this flight from your history?"
 

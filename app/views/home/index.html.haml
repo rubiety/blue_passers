@@ -16,7 +16,7 @@
           %td= link_to image_tag(user.avatar_url, :alt => user.handle, :height => "30px"), user
           %td= link_to user.handle, user
           %td= user.check_ins_count
-          %td= user.distance_sum
+          %td= number_with_delimiter(user.distance_sum) + " mi"
           %td= user.airports_count
       - if @leaderboard_users.empty?
         %tr.no-results

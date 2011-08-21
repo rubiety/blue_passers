@@ -1,4 +1,5 @@
 * Time Zones
+* Pulling flights from JetBlue needs more intelligence: Don't pull past flights when searching for today, for example.
 * Calculate Distance between Airports
 * Maps for Airports
 * Big Map for Current Checkins

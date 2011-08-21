@@ -26,20 +26,35 @@ class Flight < ActiveRecord::Base
   end
 
   def description
-    "#{number} #{origin}->#{destination} on #{start_at}"
+    "#{number} #{origin}->#{destination} on #{local_start_at}"
+  end
+
+  def local_start_at
+    start_at.in_time_zone(origin.time_zone)
+  end
+
+  def local_end_at
+    end_at.in_time_zone(destination.time_zone)
+  end
+
+  def local_last_check_in_at
+    last_check_in_at.in_time_zone(ActiveSupport::TimeZone["Pacific Time (US & Canada)"])
   end
 
   def self.ensure_exists_from_jetblue(jetblue_flight)
     (by_number_and_day(jetblue_flight.number, jetblue_flight.start_at) || new).tap do |flight|
+      origin_airport = Airport.find_or_create_by_code(jetblue_flight.origin_airport_code)
+      destination_airport = Airport.find_or_create_by_code(jetblue_flight.destination_airport_code)
+
       flight.update_attributes(
         :number => jetblue_flight.number,
-        :origin => Airport.find_or_create_by_code(jetblue_flight.origin_airport_code),
-        :destination => Airport.find_or_create_by_code(jetblue_flight.destination_airport_code),
+        :origin => origin_airport,
+        :destination => destination_airport,
         :start_at => jetblue_flight.start_at,
         :actual_start_at => jetblue_flight.actual_start_at,
         :end_at => jetblue_flight.end_at,
         :actual_end_at => jetblue_flight.actual_end_at,
-        :distance => 2000
+        :distance => origin_airport.distance_to(destination_airport)
       )
     end
   end

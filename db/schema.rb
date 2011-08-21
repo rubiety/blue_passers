@@ -10,17 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819053248) do
+ActiveRecord::Schema.define(:version => 20110821011214) do
 
   create_table "airports", :force => true do |t|
     t.string  "code",                           :limit => 3
     t.string  "name"
     t.string  "city_name"
-    t.integer "flights_as_origin_count",                     :default => 0, :null => false
-    t.integer "flights_as_destination_count",                :default => 0, :null => false
-    t.integer "check_ins_as_origin_count",                   :default => 0, :null => false
-    t.integer "check_ins_as_destination_count",              :default => 0, :null => false
-    t.integer "unique_visitors_count",                       :default => 0, :null => false
+    t.integer "flights_as_origin_count",                                                   :default => 0, :null => false
+    t.integer "flights_as_destination_count",                                              :default => 0, :null => false
+    t.integer "check_ins_as_origin_count",                                                 :default => 0, :null => false
+    t.integer "check_ins_as_destination_count",                                            :default => 0, :null => false
+    t.integer "unique_visitors_count",                                                     :default => 0, :null => false
+    t.decimal "time_zone_offset",                            :precision => 5, :scale => 2
+    t.string  "time_zone_name"
+    t.string  "dst",                            :limit => 1
+    t.integer "altitude"
+    t.decimal "latitude",                                    :precision => 9, :scale => 6
+    t.decimal "longitude",                                   :precision => 9, :scale => 6
   end
 
   add_index "airports", ["code"], :name => "index_airports_on_code"

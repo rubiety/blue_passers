@@ -44,8 +44,8 @@
         %tr{:class => cycle("odd", "even")}
           %td= link_to flight.number, flight
           %td= flight.destination.code_with_city_name
-          %td= flight.start_at
-          %td= flight.end_at
+          %td= flight.local_start_at
+          %td= flight.local_end_at
           %td= pluralize(flight.check_ins_count, "user")
       - if @flights_as_origin.empty?
         %tr.no-results
@@ -67,8 +67,8 @@
         %tr{:class => cycle("odd", "even")}
           %td= link_to flight.number, flight
           %td= flight.origin.code_with_city_name
-          %td= flight.start_at
-          %td= flight.end_at
+          %td= flight.local_start_at
+          %td= flight.local_end_at
           %td= pluralize(flight.check_ins_count, "user")
       - if @flights_as_destination.empty?
         %tr.no-results
