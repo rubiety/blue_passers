@@ -4,6 +4,9 @@ require 'rvm/capistrano'
 require 'bundler/capistrano'
 require 'hoptoad_notifier/capistrano'
 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 set :rvm_ruby_string, '1.9.2-p180'
 
 ## Configuration

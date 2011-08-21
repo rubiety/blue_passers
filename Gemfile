@@ -18,6 +18,8 @@ gem "fancy-buttons"
 gem "paperclip"
 gem "friendly_id"
 
+gem 'whenever', :require => false
+
 group :development do
   gem "capistrano"
   gem "ruby-debug19"
