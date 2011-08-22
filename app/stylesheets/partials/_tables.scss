@@ -22,3 +22,28 @@ table {
   }
 
 }
+
+
+table.tablesorter {
+  thead tr .header {
+    background-image: url(../images/tablesorter/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+  }
+
+  tbody td {
+    padding: 4px;
+    vertical-align: top;
+  }
+  thead tr .headerSortUp {
+    background-image: url(../images/tablesorter/asc.gif);
+  }
+  thead tr .headerSortDown {
+    background-image: url(../images/tablesorter/desc.gif);
+  }
+  thead tr .headerSortDown, thead tr .headerSortUp {
+    background-color: lighten($primary_color_light, 15%);
+  }
+}
+
