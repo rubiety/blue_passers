@@ -1,12 +1,6 @@
 class User < ActiveRecord::Base
   has_many :check_ins
   has_many :flights, :through => :check_ins
-  has_many :airports, :finder_sql => '
-    SELECT DISTINCT a.* FROM airports a 
-    INNER JOIN flights f ON f.origin_id = a.id OR f.destination_id = a.id 
-    INNER JOIN check_ins ci ON ci.flight_id = f.id 
-    WHERE ci.user_id = #{id}
-  '
 
   after_create :follow_by_flight_master
 
@@ -24,6 +18,10 @@ class User < ActiveRecord::Base
   
   def handle
     "@#{username}"
+  end
+
+  def airports
+    Airport.where(:id => (flights.map(&:origin_id) + flights.map(&:destination_id)).uniq)
   end
 
   def self.initialize_with_omniauth(authentication)

@@ -21,6 +21,7 @@ class CheckIn < ActiveRecord::Base
 
   def update_user_stats
     user.update_distance_sum
+    user.update_airports_count
   end
 
   def update_airport_stats
