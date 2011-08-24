@@ -1,6 +1,3 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :tweet do
-    end
+Factory.define :tweet do |f|
+  
 end

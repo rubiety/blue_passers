@@ -1,6 +1,3 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :airport do
-    end
+# TODO: Shouldn't need this, just use seeds:
+Factory.define :airport do |f|
 end

@@ -1,6 +1,5 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :check_in do
-    end
+Factory.define :check_in do |f|
+  f.association :flight
+  f.association :user
+  f.association :tweet  # TODO: Make dependent on number generated from flight?
 end

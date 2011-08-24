@@ -1,6 +1,3 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :flight do
-    end
+Factory.define :flight do |f|
+  
 end
