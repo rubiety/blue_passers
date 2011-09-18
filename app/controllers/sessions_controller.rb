@@ -2,7 +2,10 @@ class SessionsController < ApplicationController
   def create  
     @user = User.initialize_with_omniauth(request.env["omniauth.auth"])
 
-    if @user.save
+    if @user.valid?
+      FlightMaster.follow_by_flight_master if @user.new_record?
+      @user.save!
+
       session[:user_id] = @user.id
       redirect_to root_path, :notice => "Welcome #{@user}"
     else

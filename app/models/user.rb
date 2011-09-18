@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   has_many :check_ins
   has_many :flights, :through => :check_ins
 
-  after_create :follow_by_flight_master
-
   scope :leaderboard, where(:show_on_leaderboard => true).order("distance_sum desc")
 
   has_friendly_id :username, :use_slug => true
@@ -64,9 +62,6 @@ class User < ActiveRecord::Base
   def update_airports_count
     update_attribute(:airports_count, airports.count)
   end
-
-
-  protected
 
   def follow_by_flight_master
     FlightMaster.follow(username)

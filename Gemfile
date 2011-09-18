@@ -16,19 +16,18 @@ gem "mechanize"
 
 gem "fancy-buttons"
 gem "paperclip"
-gem "friendly_id"
+gem "friendly_id", "~> 3.3.0"
 
 gem 'whenever', :require => false
 
 group :development do
   gem "capistrano"
   gem "ruby-debug19"
-  gem "rspec-rails", ">= 2.0.1"
 end
 
 group :test do
-  gem "faker"
-  gem "rspec-rails", ">= 2.0.1"
+  gem "forgery"
+  gem "rspec-rails"
   gem "capybara"
   gem "capybara-firebug"
   gem "database_cleaner"

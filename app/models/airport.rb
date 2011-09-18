@@ -56,7 +56,7 @@ class Airport < ActiveRecord::Base
   end
   
   def time_zone
-    ActiveSupport::TimeZone[time_zone_name]
+    ActiveSupport::TimeZone[time_zone_name] if time_zone_name
   end
 
   def distance_to(other_airport)
