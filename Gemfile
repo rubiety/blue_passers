@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.9"
+gem "rails", "3.0.10"
 gem "mysql2", "~> 0.2.7"
 
 gem "haml"
@@ -29,14 +29,11 @@ group :test do
   gem "forgery"
   gem "rspec-rails"
   gem "capybara"
-  gem "capybara-firebug"
   gem "database_cleaner"
   gem "launchy"
-  gem "pickle"
   gem "factory_girl_rails"
   gem "shoulda-matchers"
-  gem "growl"
-  gem "spork", ">= 0.9.0.rc5"
+  gem "spork"
   gem "guard"
   gem "guard-bundler"
   gem "guard-rspec"
