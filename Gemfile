@@ -33,6 +33,8 @@ group :test do
   gem "launchy"
   gem "factory_girl_rails"
   gem "shoulda-matchers"
+  gem "vcr"
+  gem "fakeweb"
   gem "spork"
   gem "guard"
   gem "guard-bundler"

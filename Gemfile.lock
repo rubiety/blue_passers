@@ -65,6 +65,7 @@ GEM
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
+    fakeweb (1.3.0)
     fancy-buttons (1.1.2)
       compass (>= 0.11)
     faraday (0.6.1)
@@ -251,6 +252,7 @@ GEM
       multi_xml (~> 0.2.0)
       simple_oauth (~> 0.1.5)
     tzinfo (0.3.29)
+    vcr (1.11.3)
     webrobots (0.0.11)
       nokogiri (>= 1.4.4)
     whenever (0.7.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   compass
   database_cleaner
   factory_girl_rails
+  fakeweb
   fancy-buttons
   forgery
   friendly_id (~> 3.3.0)
@@ -291,4 +294,5 @@ DEPENDENCIES
   shoulda-matchers
   spork
   twitter
+  vcr
   whenever

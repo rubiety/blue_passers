@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.initialize_with_omniauth(request.env["omniauth.auth"])
 
     if @user.valid?
-      FlightMaster.follow_by_flight_master if @user.new_record?
+      @user.follow_by_flight_master if @user.new_record?
       @user.save!
 
       session[:user_id] = @user.id

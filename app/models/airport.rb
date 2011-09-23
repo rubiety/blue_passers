@@ -1,7 +1,7 @@
 class Airport < ActiveRecord::Base
   has_many :flights_as_origin, :class_name => "Flight", :foreign_key => "origin_id"
   has_many :flights_as_destination, :class_name => "Flight", :foreign_key => "destination_id"
-  has_many :flights, :class_name => "Flight", :finder_sql => 'SELECT DISTINCT * FROM flights WHERE origin_id = #{id} or destination_id = #{id}'
+  has_many :flights, :class_name => "Flight", :finder_sql => proc { "SELECT DISTINCT * FROM flights WHERE origin_id = #{id} or destination_id = #{id}" }
 
   has_friendly_id :code_with_city_name, :use_slug => true
 

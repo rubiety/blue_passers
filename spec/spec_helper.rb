@@ -16,9 +16,17 @@ Spork.prefork do
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+  VCR.config do |c|
+    c.cassette_library_dir = "fixtures/vcr_cassettes"
+    c.stub_with :fakeweb # or :webmock
+  end
+
   RSpec.configure do |config|
     config.mock_with :rspec
     config.use_transactional_fixtures = false
+
+    config.include Factory::Syntax::Methods
+    config.extend VCR::RSpec::Macros
 
     config.before do
       DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
