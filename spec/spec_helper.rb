@@ -17,7 +17,7 @@ Spork.prefork do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   VCR.config do |c|
-    c.cassette_library_dir = "fixtures/vcr_cassettes"
+    c.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     c.stub_with :fakeweb # or :webmock
   end
 

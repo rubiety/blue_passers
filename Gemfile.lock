@@ -292,7 +292,6 @@ DEPENDENCIES
   rspec-rails
   ruby-debug19
   shoulda-matchers
-  spork
   twitter
   vcr
   whenever

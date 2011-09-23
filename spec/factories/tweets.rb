@@ -3,6 +3,7 @@ FactoryGirl.define do
     user
     username { user.username }
     flight_number(777).ignore
+    tweeted_at { 10.minutes.ago }
     text do
       ["About to take flight #{flight_number}.",
        "Taking ##{flight_number} now.",

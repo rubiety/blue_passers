@@ -8,5 +8,19 @@ feature "Browsing" do
   scenario "Going to the Home Page" do
     visit root_path
   end
+
+  scenario "Browsing Airports" do
+    visit root_path
+    within("nav") do
+      click_link "Airports"
+    end
+  end
+
+  scenario "Browsing Flights" do
+    visit root_path
+    within("nav") do
+      click_link "Flights"
+    end
+  end
 end
 

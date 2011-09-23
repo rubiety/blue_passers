@@ -1,0 +1,300 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://www.jetblue.com:80/flightstatus/flightstatussched.aspx?FlightDate=09/23/2011&FlightNum=412
+    body: !!null 
+    headers:
+      user-agent:
+      - Mechanize/2.0.1 Ruby/1.9.2p290 (http://github.com/tenderlove/mechanize/)
+      accept-encoding:
+      - gzip,deflate,identity
+      accept-charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      accept-language:
+      - en-us,en;q=0.5
+      host:
+      - www.jetblue.com
+      connection:
+      - keep-alive
+      keep-alive:
+      - 300
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 302
+      message: RD
+    headers:
+      location:
+      - http://airportwifi.com/bos?UI=01f981&NI=0050e801f981&UIP=192.168.1.10&MA=040CCEE2E130&RN=898&PORT=898&RAD=yes&TUN=no&CC=no&PMS=no&SIP=192.168.210.37&OS=http://www.jetblue.com%2Fflightstatus%2Fflightstatussched.aspx%3FFlightDate%3D09%2F23%2F2011%26FlightNum%3D412&METHOD=None
+      content-length:
+      - '776'
+    body: ! '<HTML>
+
+      <!--access procedure=nx.1-->
+
+      <!--ndxid=01f981-->
+
+      <!--protocol=https-->
+
+      <!--ndxhost=nomadprime.subscribe.loganwifi.com-->
+
+      <!--ndxport=1112-->
+
+      <!--<?xml version="1.0" encoding="UTF-8"?>
+
+      <WISPAccessGatewayParam
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+      xsi:noNamespaceSchemaLocation="http://www.acmewisp.com/WISPAccessGatewayParam.xsd">
+
+      <Proxy>
+
+      <MessageType>110</MessageType>
+
+      <ResponseCode>200</ResponseCode>
+
+      <NextURL><![CDATA[http://airportwifi.com/bos?UI=01f981&NI=0050e801f981&UIP=192.168.1.10&MA=040CCEE2E130&RN=898&PORT=898&RAD=yes&TUN=no&CC=no&PMS=no&SIP=192.168.210.37&OS=http://www.jetblue.com%2Fflightstatus%2Fflightstatussched.aspx%3FFlightDate%3D09%2F23%2F2011%26FlightNum%3D412&METHOD=None]]></NextURL>
+
+      </Proxy>
+
+      </WISPAccessGatewayParam>-->
+
+      </HTML>'
+    http_version: '1.0'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://airportwifi.com:80/bos?UI=01f981&NI=0050e801f981&UIP=192.168.1.10&MA=040CCEE2E130&RN=898&PORT=898&RAD=yes&TUN=no&CC=no&PMS=no&SIP=192.168.210.37&OS=http://www.jetblue.com%2Fflightstatus%2Fflightstatussched.aspx%3FFlightDate%3D09%2F23%2F2011%26FlightNum%3D412&METHOD=None
+    body: !!null 
+    headers:
+      user-agent:
+      - Mechanize/2.0.1 Ruby/1.9.2p290 (http://github.com/tenderlove/mechanize/)
+      accept-encoding:
+      - gzip,deflate,identity
+      accept-charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      accept-language:
+      - en-us,en;q=0.5
+      host:
+      - airportwifi.com
+      referer:
+      - !ruby/object:URI::HTTP
+        scheme: http
+        user: !!null 
+        password: !!null 
+        host: www.jetblue.com
+        port: 80
+        path: /flightstatus/flightstatussched.aspx
+        query: FlightDate=09/23/2011&FlightNum=412
+        opaque: !!null 
+        registry: !!null 
+        fragment: !!null 
+        parser: !!null 
+      connection:
+      - keep-alive
+      keep-alive:
+      - 300
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      content-type:
+      - text/html; charset=utf-8
+      expires:
+      - '-1'
+      server:
+      - Microsoft-IIS/7.0
+      set-cookie:
+      - website#sc_wede=1; path=/
+      - ASP.NET_SessionId=bkvoaoadofempovtlp50th3s; path=/; HttpOnly
+      x-aspnet-version:
+      - 2.0.50727
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Fri, 23 Sep 2011 11:53:25 GMT
+      content-length:
+      - '27592'
+    body: ! "\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"
+      \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head><title>\r\n\tAWG
+      - Boston Logan International Airport\r\n</title><meta http-equiv=\"Content-Type\"
+      content=\"text/html; charset=UTF-8\" />\r\n\t<script type=\"text/javascript\"
+      src=\"/assets/js/main.js\"></script>\r\n\t<script type=\"text/javascript\" src=\"/assets/js/ie-hover-pack.js\"></script>\r\n\t<script
+      type=\"text/javascript\" src=\"/assets/js/png-fix.js\"></script>\r\n    <link
+      href=\"/assets/css/all.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n\t<!--[if
+      lt IE 7]><link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/lt7.css\"
+      media=\"screen\" /><![endif]-->\r\n\t<!--[if lt IE 8]><link rel=\"stylesheet\"
+      type=\"text/css\" href=\"/assets/css/ie.css\" media=\"screen\" /><![endif]-->\r\n\t\r\n\t<script
+      src=\"/assets/js/swfobject.js\" type=\"text/javascript\"></script>\r\n\t<script
+      type=\"text/javascript\" src=\"/assets/js/jquery.tools.min.js\"></script>\r\n<link
+      href=\"/assets/css/all.css\" rel=\"stylesheet\" type=\"text/css\" /></head>\r\n<body
+      id=\"ctlBody\">\r\n<script type=\"text/javascript\">\r\n    var _gaq = _gaq
+      || [];\r\n    _gaq.push(['_setAccount', 'UA-18585223-1']);\r\n    _gaq.push(['_trackPageview']);\r\n\r\n
+      \   (function () {\r\n        var ga = document.createElement('script'); ga.type
+      = 'text/javascript'; ga.async = true;\r\n        ga.src = ('https:' == document.location.protocol
+      ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r\n        var
+      s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+      s);\r\n    })();\r\n\r\n    // avoid conflict with page editor\r\n    var $j
+      = jQuery.noConflict();\r\n</script>\r\n<form name=\"form1\" method=\"post\"
+      action=\"/bos?UI=01f981&amp;NI=0050e801f981&amp;UIP=192.168.1.10&amp;MA=040CCEE2E130&amp;RN=898&amp;PORT=898&amp;RAD=yes&amp;TUN=no&amp;CC=no&amp;PMS=no&amp;SIP=192.168.210.37&amp;OS=http://www.jetblue.com%2Fflightstatus%2Fflightstatussched.aspx%3FFlightDate%3D09%2F23%2F2011%26FlightNum%3D412&amp;METHOD=None\"
+      id=\"form1\">\r\n<div>\r\n<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\"
+      value=\"/wEPDwUKLTUyMzkyODMzMw9kFgICAw9kFgQCARBkZBYsAgUPDxYCHgdWaXNpYmxlZ2QWAmYPFgIeCWlubmVyaHRtbAWPBTwhLS0gQmVnaW4gSmlXaXJlIEFkIFRhZyAtLT4NCjwhLS0gVGhpcyB0YWcgaXMgaW50ZW5kZWQgdG8gYmUgcnVuIGluIFByZSBBdXRoIGJlaGluZCB0aGUgZ2F0ZXdheSBnYXJkZW4gd2FsbCBiZWZvcmUgdGhlIHVzZXIgaXMgYXV0aGVudGljYXRlZCB0byB0aGUgSW50ZXJuZXQuIC0tPg0KDQoKPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoNCiAgZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiAgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF9GbGV4Jmpwcz0xJnBhPTEmZW1iZWQ9MSZwcmlkPUJPUyIgPjxcL3NjcmlwdD4nKTsNCgo8L3NjcmlwdD4KDQo8bm9zY3JpcHQ+DQogIDxpZnJhbWUgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF9GbGV4Jmpwcz0xJnBhPTEmcHJpZD1CT1MiIHNjcm9sbGluZz0ibm8iIGZyYW1lYm9yZGVyPSIwIiA+PC9pZnJhbWU+DQo8L25vc2NyaXB0Pg0KDQo8IS0tIEVuZCBKaVdpcmUgQWQgVGFnIC0tPg0KDQo8aWZyYW1lIHNyYz0iL2VuL0JPUy9nb29nbGUvc3BsYXNoLmFzcHgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHN0eWxlPSJkaXNwbGF5Om5vbmUiID48L2lmcmFtZT5kAgcPFgIfAQWiATxhIGhyZWY9Ii9lbi9CT1MuYXNweCI+DQo8aW1nIGFsdD0iTWFzc3BvcnQiIHRpdGxlPSJNYXNzcG9ydCIgc3JjPSJ+L21lZGlhL21hc3Nwb3J0X2xvZ28uYXNoeD93PTEwMSZhbXA7aD02MCZhbXA7YXM9MSIgd2lkdGg9IjEwMSIgaGVpZ2h0PSI2MCIgYm9yZGVyPSIwIiAvPg0KPC9hPmQCCQ8PFgIeBFRleHQFygQ8IS0tIEJlZ2luIEppV2lyZSBBZCBUYWcgLS0+DQo8IS0tIFRoaXMgdGFnIGlzIGludGVuZGVkIHRvIGJlIHJ1biBpbiBQcmUgQXV0aCBiZWhpbmQgdGhlIGdhdGV3YXkgZ2FyZGVuIHdhbGwgYmVmb3JlIHRoZSB1c2VyIGlzIGF1dGhlbnRpY2F0ZWQgdG8gdGhlIEludGVybmV0LiAtLT4NCjwhLS0gMDIwNDExIFJDIHRvb2sgZ29vZ2xlIG91dCBvZiBvbmxvYWQgLS0+DQoNCgo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+Cg0KDQokaihkb2N1bWVudCkucmVhZHkoZG9jdW1lbnQud3JpdGUoJzxpZnJhbWUgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF9MQjEmanBzPTEmcGE9MSZwcmlkPUJPUyIgc2Nyb2xsaW5nPSJubyIgZnJhbWVib3JkZXI9IjAiIHdpZHRoPSI3MjgiIGhlaWdodD0iOTAiID48L2lmcmFtZT4nKSk7DQoNCgo8L3NjcmlwdD4KDQoNCjwhLS0gLSBFbmQgSmlXaXJlIEFkIFRhZyAtLT4NCg0KPGlmcmFtZSBzcmM9Ii9lbi9CT1MvZ29vZ2xlLzcyOHg5MC5hc3B4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBzdHlsZT0iZGlzcGxheTpub25lIiA+PC9pZnJhbWU+ZGQCCw8PFgIfAGhkZAIND2QWAmYPZBYCZg9kFgJmD2QWBgIBDxYCHwEFIkJvc3RvbiBMb2dhbiBJbnRlcm5hdGlvbmFsIEFpcnBvcnRkAgMPFgIfAQUiTmV3IEVuZ2xhbmQncyBHYXRld2F5IHRvIHRoZSBXb3JsZGQCBQ8WAh8BBfkGPGxpIGNsYXNzPSJjb25uZWN0LWJ0biI+DQo8YSBocmVmPSIvZW4vQk9TL2ludGVybmV0LmFzcHgiIHRpdGxlPSJJbnRlcm5ldCBBY2Nlc3MgQ2xpY2sgdG8gQ29ubmVjdCI+DQo8c3BhbiBzdHlsZT0iRk9OVC1TSVpFOiAxNHB0Ij4gPGltZyBhbHQ9IiIgc3JjPSJ+L21lZGlhL3dpZmkgYW50ZW5uYS5hc2h4P2g9NDkmYW1wO3c9NzAmYW1wO2FzPTEiIHdpZHRoPSI3MCIgaGVpZ2h0PSI0OSIgYm9yZGVyPSIwIiAvPjwvc3Bhbj5JbnRlcm5ldCBBY2Nlc3MgPGJyIC8+Q2xpY2sgdG8gQ29ubmVjdDwvYT4gPC9saT4NCg0KPGxpPjxhIGhyZWY9Ii9lbi9CT1MvaGVscC5hc3B4IiBzdHlsZT0iY29sb3I6UmVkIiB0aXRsZT0iSGVscCBhbmQgU3VwcG9ydCIgdGFyZ2V0PSJfYmxhbmsiPg0KPGltZyBzcmM9In4vbWVkaWEvYnV0dG9ucy9yZWRjcm9zcy5hc2h4P3c9NTYmYW1wO2g9NTEmYW1wO2FzPTEiIGFsdD0iSGVscCAmYW1wOyBTdXBwb3J0IiB3aWR0aD0iNTYiIGhlaWdodD0iNTEiIGJvcmRlcj0iMCIgc3R5bGU9Im1hcmdpbi1sZWZ0OjE3cHg7IG1hcmdpbi10b3A6N3B4OyBtYXJnaW4tcmlnaHQ6MTVweCIgLz5IZWxwICZhbXA7IFN1cHBvcnQ8L2E+PC9saT4NCg0KPGxpPjxhIGhyZWY9Ii9lbi9CT1MvdHJhY2tfZmxpZ2h0LmFzcHgiIHRpdGxlPSJUcmFjayBZb3VyIEZsaWdodCI+PHNwYW4gc3R5bGU9IkZPTlQtU0laRTogMTRwdCI+PGltZyBzdHlsZT0iV0lEVEg6IDcycHg7IEhFSUdIVDogNDlweCIgYWx0PSJUcmFjayBZb3VyIEZsaWdodCIgc3JjPSIvYXNzZXRzL2ltYWdlcy9pY29uLTAyLnBuZz93PTcyJmFtcDtoPTQ5JmFtcDthcz0xIiB3aWR0aD0iNzUiIGhlaWdodD0iNTMiIGJvcmRlcj0iMCIgLz4gPC9zcGFuPlRyYWNrIFlvdXIgRmxpZ2h0PC9hPiA8L2xpPmQCDw9kFgJmD2QWAmYPZBYEAgQPDxYCHwBoZGQCBg8PFgIfAgXTAzwhLS0gQmVnaW4gSmlXaXJlIEFkIFRhZyAtLT4NCjwhLS0gMDIwNDExIFJDIHRvb2sgZ29vZ2xlIG91dCBvZiBvbmxvYWQgLS0+DQoNCgo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+Cg0KDQokaihkb2N1bWVudCkucmVhZHkoZG9jdW1lbnQud3JpdGUoJzxpZnJhbWUgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF9Ub3dlcjEmanBzPTEmcGE9MSZmbXQ9MTYweDYwMCZwcmlkPUJPUyIgc2Nyb2xsaW5nPSJubyIgZnJhbWVib3JkZXI9IjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iNjAwIiA+PC9pZnJhbWU+JykpOw0KDQoKPC9zY3JpcHQ+Cg0KDQo8IS0tIEVuZCBKaVdpcmUgQWQgVGFnIC0tPg0KDQo8aWZyYW1lIHNyYz0iL2VuL0JPUy9nb29nbGUvMTYweDYwMC5hc3B4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBzdHlsZT0iZGlzcGxheTpub25lIiA+PC9pZnJhbWU+ZGQCEQ9kFgJmD2QWAmYPZBYCAgsPDxYCHwIF7RIKPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoNCg0KdmFyIHF2YXJzID0gZ2V0VXJsVmFycygpOw0KaWYgKHF2YXJzWyJSTiJdID09ICI5MDYiKSB7DQpsb2NhdGlvbi5ocmVmPSIvYm9zL2ludGVybmV0L2NyZXdfZGVsdGEuYXNweCI7DQp9IA0KDQoKPC9zY3JpcHQ+Cg0KDQo8dWwgc3R5bGU9IlBPU0lUSU9OOiBzdGF0aWMiIGNsYXNzPSJpY29uLWxpc3QiPg0KPGxpPjxzcGFuIHN0eWxlPSJGT05ULVNJWkU6IDE0cHQiPjxpbWcgc3R5bGU9IldJRFRIOiA4NXB4OyBIRUlHSFQ6IDU4cHgiIGFsdD0iVHJhY2sgWW91ciBGbGlnaHQiIHNyYz0ifi9tZWRpYS9JbWFnZXMvQVdHL2ljb25zX2hlYWRlcnMvaWNvbi1pbmZvLWhlYWRlci5hc2h4P3c9ODUmYW1wO2g9NTgmYW1wO2FzPTEiIHdpZHRoPSI5NSIgaGVpZ2h0PSI2NyIgLz4gPC9zcGFuPg0KPGRpdiBjbGFzcz0iaWNvbi10eHQiPg0KPGgzPjxhIGhyZWY9Ii9lbi9CT1MvYWlycG9ydF9pbmZvLmFzcHgiPkFpcnBvcnQgSW5mb3JtYXRpb248L2E+IDwvaDM+DQo8cD5GaW5kIGluZm9ybWF0aW9uIG9uIGFpcmxpbmVzLCBwbGFjZXMgdG8gZWF0IGFuZCBtb3JlLjwvcD48L2Rpdj48L2xpPg0KPGxpPjxzcGFuIHN0eWxlPSJGT05ULVNJWkU6IDE0cHQiPjxpbWcgc3R5bGU9IldJRFRIOiA4MnB4OyBIRUlHSFQ6IDU0cHgiIGFsdD0iVHJhY2sgWW91ciBGbGlnaHQiIHNyYz0ifi9tZWRpYS9JbWFnZXMvQVdHL2ljb25zX2hlYWRlcnMvaWNvbi0wOS5hc2h4P3c9ODImYW1wO2g9NTQmYW1wO2FzPTEiIHdpZHRoPSI5NSIgaGVpZ2h0PSI2NyIgLz4gPC9zcGFuPg0KPGRpdiBjbGFzcz0iaWNvbi10eHQiPg0KPGgzPjxhIGhyZWY9Ii9lbi9CT1MvdHJhY2tfZmxpZ2h0LmFzcHgiPlRyYWNrIFlvdXIgRmxpZ2h0PC9hPiA8L2gzPg0KPHA+Q2xpY2sgaGVyZSBmb3IgdXAgdG8gdGhlIG1pbnV0ZSBmbGlnaHQgaW5mb3JtYXRpb24uPC9wPjwvZGl2PjwvbGk+DQo8bGk+PHNwYW4gc3R5bGU9IkZPTlQtU0laRTogMTRwdCI+PGltZyBhbHQ9IldhdGNoIExpdmUgVFYiIHNyYz0ifi9tZWRpYS9JbWFnZXMvQVdHL2ljb25zX2hlYWRlcnMvaWNvbi10di1oZWFkZXIuYXNoeD93PTk1JmFtcDtoPTY3JmFtcDthcz0xIiB3aWR0aD0iOTUiIGhlaWdodD0iNjciIC8+IDwvc3Bhbj4NCjxkaXYgY2xhc3M9Imljb24tdHh0Ij4NCjxoMz48YSBocmVmPSIvZW4vQk9TL3R2LmFzcHgiPk5ld3MgYW5kIEVudGVydGFpbm1lbnQ8L2E+IDwvaDM+DQo8cD5XYXRjaCBuZXdzLCBzcG9ydHMsIHdlYXRoZXIgYW5kIG1vcmUgd2hpbGUgeW91IHdhaXQgZm9yIHlvdXIgZmxpZ2h0ITwvcD48L2Rpdj48L2xpPg0KPGxpPjxzcGFuIHN0eWxlPSJGT05ULVNJWkU6IDE0cHQiPjxpbWcgc3R5bGU9IldJRFRIOiA5NXB4OyBIRUlHSFQ6IDY2cHgiIGFsdD0iUmVudCBBIENhciIgc3JjPSJ+L21lZGlhL0ltYWdlcy9BV0cvaWNvbnNfaGVhZGVycy9pY29uLWNhci1oZWFkZXIuYXNoeD93PTk1JmFtcDtoPTY2JmFtcDthcz0xIiB3aWR0aD0iOTUiIGhlaWdodD0iNjciIC8+IDwvc3Bhbj4NCjxkaXYgc3R5bGU9IldJRFRIOiAzNjdweDsgSEVJR0hUOiA4MHB4IiBjbGFzcz0iaWNvbi10eHQiPg0KPGgzPjxhIGhyZWY9Ii9lbi9CT1MvcmVudGFscy5hc3B4Ij5SZW50YWwgQ2FyczwvYT4gPC9oMz4NCjxwPkZpbmQgYWxsIG9mIHRoZSBhdmFpbGFibGUgcmVudGFsIGNhciBjb21wYW5pZXMgYXQgdGhlIGFpcnBvcnQuIEFsc28gZmluZCBpbmZvcm1hdGlvbiBhYm91dCBzaHV0dGxlcyBhbmQgZXhlY3VjYXJzLjwvcD48L2Rpdj48L2xpPg0KPGxpPjxzcGFuIHN0eWxlPSJGT05ULVNJWkU6IDE0cHQiPjxpbWcgYWx0PSJDaXR5IEluZm9ybWF0aW9uIiBzcmM9In4vbWVkaWEvSW1hZ2VzL0FXRy9pY29uc19oZWFkZXJzL2ljb24tY2l0eS1oZWFkZXIuYXNoeD93PTk1JmFtcDtoPTY3JmFtcDthcz0xIiB3aWR0aD0iOTUiIGhlaWdodD0iNjciIC8+IDwvc3Bhbj4NCjxkaXYgY2xhc3M9Imljb24tdHh0Ij4NCjxoMz48YSBocmVmPSIvZW4vQk9TL2NpdHkuYXNweCI+Q2l0eSBJbmZvcm1hdGlvbjwvYT4gPC9oMz4NCjxwPkluZm9ybWF0aW9uIG9uIHRoZSBCb3N0b24gYXJlYS48L3A+PC9kaXY+PC9saT4NCjxsaT48c3BhbiBzdHlsZT0iRk9OVC1TSVpFOiAxNHB0Ij48aW1nIGFsdD0iSGVscCAmYW1wOyBGZWVkYmFjayIgc3JjPSJ+L21lZGlhL0ltYWdlcy9BV0cvaWNvbnNfc21hbGwvaWNvbi0wOC5hc2h4P3c9NTYmYW1wO2g9NDgmYW1wO2FzPTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OCIgLz4gPC9zcGFuPg0KPGRpdiBjbGFzcz0iaWNvbi10eHQiPg0KPGgzPjxhIGhyZWY9IiMiPkhlbHAgJmFtcDsgRmVlZGJhY2s8L2E+IDwvaDM+DQo8cD5GaW5kIG1vcmUgaW5mb3JtYXRpb24sIG9yIHNlbmQgY29tbWVudHMgYW5kIGZlZWRiYWNrLjwvcD48L2Rpdj48L2xpPjwvdWw+ZGQCFQ9kFgJmD2QWAmYPZBYCAgUPDxYCHwIFqwo8IS0tIEJlZ2luIEppV2lyZSBBZCBUYWcgLS0+DQo8IS0tIDAyMDQxMSBSQyB0b29rIGdvb2dsZSBvdXQgb2Ygb25sb2FkIC0tPg0KPCEtLSAwMjIzMTEgUkMgYWRkZWQgYmFjayBvcmlnaW5hbCB0YWdzIC0tPg0KDQo8IS0tIEJlZ2luIEppV2lyZSBBZCBUYWcgLS0+DQo8IS0tIFRoaXMgdGFnIGlzIGludGVuZGVkIHRvIGJlIHJ1biBpbiBQcmUgQXV0aCBiZWhpbmQgdGhlIGdhdGV3YXkgZ2FyZGVuIHdhbGwgYmVmb3JlIHRoZSB1c2VyIGlzIGF1dGhlbnRpY2F0ZWQgdG8gdGhlIEludGVybmV0LiAtLT4NCgo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+Cg0KZG9jdW1lbnQud3JpdGUoJzxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiAgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF8xJmpwcz0xJnBhPTEmZW1iZWQ9MSZwcmlkPUJPUyIgPjxcL3NjcmlwdD4nKTsNCgo8L3NjcmlwdD4KDQo8bm9zY3JpcHQ+DQo8aWZyYW1lIHNyYz0iaHR0cDovL3RhZ3Muaml3aXJlLmNvbS8/bmV0aWQ9MTUwLUJPUyZsaWQ9UHJlX0F1dGhfMSZqcHM9MSZwYT0xJnByaWQ9Qk9TIiBzY3JvbGxpbmc9Im5vIiBmcmFtZWJvcmRlcj0iMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyNTAiID48L2lmcmFtZT4NCjwvbm9zY3JpcHQ+DQo8IS0tIEVuZCBKaVdpcmUgQWQgVGFnIC0tPg0KDQoKPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoNCi8qDQokaihkb2N1bWVudCkucmVhZHkoZG9jdW1lbnQud3JpdGUoJzxpZnJhbWUgc3JjPSJodHRwOi8vdGFncy5qaXdpcmUuY29tLz9uZXRpZD0xNTAtQk9TJmxpZD1QcmVfQXV0aF8xJmpwcz0xJnBhPTEmcHJpZD1CT1MiIHNjcm9sbGluZz0ibm8iIGZyYW1lYm9yZGVyPSIwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1MCIgPjwvaWZyYW1lPicpKTsNCiovDQoKPC9zY3JpcHQ+Cg0KDQo8IS0tIEVuZCBKaVdpcmUgQWQgVGFnIC0tPg0KDQo8aWZyYW1lIHNyYz0iL2VuL0JPUy9nb29nbGUvMzAweDI1MC5hc3B4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBzdHlsZT0iZGlzcGxheTpub25lIiA+PC9pZnJhbWU+DQo8cCBhbGlnbj0icmlnaHQiPg0KPHNwYW4gc3R5bGU9IkZPTlQtRkFNSUxZOiAnQ2FsaWJyaScsJ3NhbnMtc2VyaWYnOyBDT0xPUjogIzFmNDk3ZDsgRk9OVC1TSVpFOjlwdDsiPldpLUZpIEFkcyBieSBKaVdpcmUgPGEgaHJlZj0iaHR0cDovL3RhZ3Muaml3aXJlLmNvbS9hZHZlcnRpc2Vycy9sYW5kaW5nLnBocD9uZXRpZD0xNTAmcGE9MSZwcmlkPUJPUyIgdGFyZ2V0PSJfYmxhbmsiPkFkdmVydGlzZSBIZXJlPC9hPjwvc3Bhbj4NCjwvcD5kZAIXDxYCHwEFwAM8YSBocmVmPSIvZW4vQk9TL2FpcnBvcnRfaW5mby5hc3B4Ij4NCgkJCQk8c3Bhbj5BaXJwb3J0IDxiciAvPkluZm88L3NwYW4+IDwvYT48ZGl2PjxzcGFuPjwvc3Bhbj48dWw+PGxpPgo8YSBocmVmPScvZW4vQk9TL2FpcnBvcnRfaW5mby9BaXJsaW5lcy5hc3B4Jz5BaXJsaW5lczwvYT4KPC9saT4KPGxpPgo8YSBocmVmPScvZW4vQk9TL2FpcnBvcnRfaW5mby9DZWxsIFBob25lIExvdC5hc3B4Jz5QYXJraW5nPC9hPgo8L2xpPgo8bGk+CjxhIGhyZWY9Jy9lbi9CT1MvYWlycG9ydF9pbmZvL0Zvb2QgYW5kIEJldmVyYWdlcy5hc3B4Jz5EaW5pbmcgYW5kIFNob3BwaW5nPC9hPgo8L2xpPgo8bGk+CjxhIGhyZWY9Jy9lbi9CT1MvYWlycG9ydF9pbmZvL0dyb3VuZCBUcmFuc3BvcnRhdGlvbi5hc3B4Jz5Hcm91bmQgVHJhbnNwb3J0YXRpb248L2E+CjwvbGk+CjwvdWw+PGVtPjwvZW0+PC9kaXY+ZAIZDxYCHwEFQDxhIGhyZWY9Ii9lbi9CT1MvdHJhY2tfZmxpZ2h0LmFzcHgiPlRyYWNrIDxiciAvPllvdXIgRmxpZ2h0IDwvYT5kAhsPFgIfAQW5AjxhIGhyZWY9Ii9lbi9CT1MvbmV3cy5hc3B4Ij5OZXdzICZhbXA7PGJyIC8+VmlkZW88L2E+PGRpdj48c3Bhbj48L3NwYW4+PHVsPjxsaT4KPGEgaHJlZj0nL2VuL0JPUy9uZXdzL0Jvc3RvbiBMYXRlc3QgTmV3cy5hc3B4Jz5FU1BOLmNvbTwvYT4KPC9saT4KPGxpPgo8YSBocmVmPScvZW4vQk9TL25ld3MvQm9zdG9uIE1vc3QgUG9wdWxhci5hc3B4Jz5Cb3N0b24uY29tIC0gTW9zdCBQb3B1bGFyPC9hPgo8L2xpPgo8bGk+CjxhIGhyZWY9Jy9lbi9CT1MvbmV3cy9DTkVULmFzcHgnPkNORVQgTmV3czwvYT4KPC9saT4KPC91bD48ZW0+PC9lbT48L2Rpdj5kAh0PFgIfAQUzPGEgaHJlZj0iL2VuL0JPUy9yZW50YWxzLmFzcHgiPlJlbnRhbDxiciAvPkNhcnM8L2E+ZAIfDxYCHwEFUDxhIGhyZWY9Imh0dHA6Ly93d3cuYm9zdG9udXNhLmNvbS8iIHRhcmdldD0iX2JsYW5rIj5Mb2NhbCA8YnIgLz5JbmZvcm1hdGlvbiA8L2E+ZAIhDxYCHwEF/gI8YSBocmVmPSIvZW4vQk9TL2hlbHAuYXNweCI+DQoJCQkJPHNwYW4+SGVscCA8YnIgLz4mYW1wOyBGZWVkYmFjazwvc3Bhbj4gPC9hPjxkaXY+PHNwYW4+PC9zcGFuPjx1bD48bGk+CjxhIGhyZWY9Jy9lbi9CT1MvaGVscC9hYm91dC5hc3B4Jz5BYm91dCBBV0c8L2E+CjwvbGk+CjxsaT4KPGEgaHJlZj0nL2VuL0JPUy9oZWxwL2ZlZWRiYWNrLmFzcHgnPkZlZWRiYWNrPC9hPgo8L2xpPgo8bGk+CjxhIGhyZWY9Jy9lbi9CT1MvaGVscC9wcml2YWN5LmFzcHgnPlByaXZhY3kgUG9saWN5PC9hPgo8L2xpPgo8bGk+CjxhIGhyZWY9Jy9lbi9CT1MvaGVscC90ZXJtcy5hc3B4Jz5XaUZpIFRlcm1zICZhbXA7IENvbmRpdGlvbnM8L2E+CjwvbGk+CjwvdWw+PGVtPjwvZW0+PC9kaXY+ZAIjD2QWDGYPFgIfAGhkAgIPDxYCHwBoZGQCBA8PFgIfAGhkZAIGDw8WAh8AaGRkAggPDxYCHwBoZGQCCg8PFgIfAGhkZAIlDxYCHwEFSTxhIGhyZWY9Imh0dHA6Ly9BV0dmZWVkYmFjay5xdWVzdGlvbnByby5jb20iIHRhcmdldD0iX2JsYW5rIj5GZWVkYmFjazwvYT5kAicPFgIfAQU2PGEgaHJlZj0iL2VuL0JPUy9oZWxwL3ByaXZhY3kuYXNweCI+UHJpdmFjeSBQb2xpY3k8L2E+ZAIpDxYCHwEFQTxhIGhyZWY9Ii9lbi9CT1MvaGVscC90ZXJtcy5hc3B4Ij5XaUZpIFRlcm1zICZhbXA7IENvbmRpdGlvbnM8L2E+ZAIrDxYCHwEFSDxhIHN0eWxlPSJQT1NJVElPTjogc3RhdGljIiBocmVmPSIvZW4vQk9TL2hlbHAvYWJvdXQuYXNweCI+QWJvdXQgQVdHPC9hPmQCLQ8WAh8BBSw8YSBocmVmPSIvZW4vQk9TL2hlbHAuYXNweCI+U3VwcG9ydC9GQVFzPC9hPmQCLw8WAh8BBTU8YSBocmVmPSIvZW4vQk9TL2ludGVybmV0Ij5BY2Nlc3MgUHVibGljIEludGVybmV0PC9hPmQCMQ8PFgIfAgUEMjAxMWRkAgMPFgIfAgWYBDwhLS0KPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFdJU1BBY2Nlc3NHYXRld2F5UGFyYW0+CjxSZWRpcmVjdD4KPEFjY2Vzc1Byb2NlZHVyZT4xLjA8L0FjY2Vzc1Byb2NlZHVyZT4KPEFjY2Vzc0xvY2F0aW9uPkJPUzwvQWNjZXNzTG9jYXRpb24+CjxMb2NhdGlvbk5hbWU+Qk9TPC9Mb2NhdGlvbk5hbWU+CjxMb2dpblVSTD5odHRwczovL25vbWFkcHJpbWUuc3Vic2NyaWJlLmxvZ2Fud2lmaS5jb206MTExMi91c2cvcHJvY2VzczwvTG9naW5VUkw+CjxBYm9ydExvZ2luVVJMPmh0dHBzOi8vYWlycG9ydHdpZmkuY29tL2VuL0JPUy5hc3B4PC9BYm9ydExvZ2luVVJMPgo8UmVkaXJlY3Rpb25VUkw+aHR0cHM6Ly9haXJwb3J0d2lmaS5jb20vZW4vQk9TL2ludGVybmV0L3JvYW1pbmdfdGhhbmt5b3UuYXNweDwvUmVkaXJlY3Rpb25VUkw+CjxNZXNzYWdlVHlwZT4xMDA8L01lc3NhZ2VUeXBlPgo8UmVzcG9uc2VDb2RlPjA8L1Jlc3BvbnNlQ29kZT4KPC9SZWRpcmVjdD4KPC9XSVNQQWNjZXNzR2F0ZXdheVBhcmFtPgotLT4KZGTCwskCH2Y9WkCqUn2XUhX0IHUKLA==\"
+      />\r\n</div>\r\n\r\n\t<span id=\"ctlDebug\"></span>\r\n\t\r\n\t<div align=\"center\">\r\n\t\r\n\t</div>\r\n\r\n\t\r\n\r\n<style
+      type=\"text/css\">\r\n/* the overlayed element */\r\n.simple_overlay {\r\n\tdisplay:none;
+      \ /* must be initially hidden */\r\n\tz-index:10000;  /* place overlay on top
+      of other elements */\r\n\t-moz-box-shadow:0 0 90px 5px #000;  /* CSS3 styling
+      for latest browsers */\r\n\t-webkit-box-shadow: 0 0 90px #000;\t\r\n}\r\n\r\n/*
+      close button positioned on upper right corner */\r\n.simple_overlay .close {\r\n\tbackground-image:url(/assets/images/close.png);\r\n\tposition:absolute;\r\n\tright:-15px;\r\n\ttop:-15px;\r\n\tcursor:pointer;\r\n\theight:35px;\r\n\twidth:35px;\r\n}\r\n</style>\r\n<!--[if
+      IE]>\r\n   <style type=\"text/css\">\r\n   .simple_overlay {\r\n\t\tbackground-color:#333333;\r\n\t\tfilter:alpha(opacity=50);\r\n\t\topacity:
+      0.5;\r\n\t\tpadding:50px;\r\n    }\r\n    </style>\r\n<![endif]-->\r\n\r\n<!--
+      overlays -->\r\n<div id=\"ctlSplash_ctlOverlay\" class=\"simple_overlay\"><!--
+      Begin JiWire Ad Tag -->\r\n<!-- This tag is intended to be run in Pre Auth behind
+      the gateway garden wall before the user is authenticated to the Internet. -->\r\n\r\n\n<script
+      type=\"text/javascript\">\n\r\n  document.write('<script type=\"text/javascript\"
+      \ src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_Flex&jps=1&pa=1&embed=1&prid=BOS\"
+      ><\\/script>');\r\n\n</script>\n\r\n<noscript>\r\n  <iframe src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_Flex&jps=1&pa=1&prid=BOS\"
+      scrolling=\"no\" frameborder=\"0\" ></iframe>\r\n</noscript>\r\n\r\n<!-- End
+      JiWire Ad Tag -->\r\n\r\n<iframe src=\"/en/BOS/google/splash.aspx\" width=\"1\"
+      height=\"1\" style=\"display:none\" ></iframe></div>\r\n<script type=\"text/javascript\">\r\n\t$j(document).ready(function()
+      {\r\n\t\t// select the overlay element - and \"make it an overlay\"\r\n\t\t$j(\"#ctlSplash_ctlOverlay\").overlay({\r\n\t\t\texpose:
+      {\r\n\t\t\t\tcolor: '#666666',  // you might also consider a \"transparent\"
+      color for the mask\r\n\t\t\t\tloadSpeed: 'fast',\r\n\t\t\t\topacity: 0.8  //
+      highly transparent\r\n\t\t\t},\r\n\t\t\tloadSpeed: 'fast',\r\n\t\t\tleft:'center',
+      top:'center',\r\n\t\t\tapi: true  // we want to use the programming API\r\n\t\t}).load();
+      \ // load it immediately after the construction\r\n\t});\r\n\t\r\n\tfunction
+      closeSplash() {\r\n\t\t$j(\"#ctlSplash_ctlOverlay\").overlay().close();\r\n\t}\r\n\r\n\ttimer
+      = setTimeout(closeSplash, 10000);\r\n</script>\r\n\t<div id=\"wrapper\">\r\n\t\t<div
+      id=\"header\">\r\n\t\t\t<h1 id=\"ctlAirportLogo\"><a href=\"/en/BOS.aspx\">\r\n<img
+      alt=\"Massport\" title=\"Massport\" src=\"~/media/massport_logo.ashx?w=101&amp;h=60&amp;as=1\"
+      width=\"101\" height=\"60\" border=\"0\" />\r\n</a></h1>\r\n\t\t\t<span>\r\n\t\t\t\t<span
+      id=\"ctlAdTop\"><!-- Begin JiWire Ad Tag -->\r\n<!-- This tag is intended to
+      be run in Pre Auth behind the gateway garden wall before the user is authenticated
+      to the Internet. -->\r\n<!-- 020411 RC took google out of onload -->\r\n\r\n\n<script
+      type=\"text/javascript\">\n\r\n\r\n$j(document).ready(document.write('<iframe
+      src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_LB1&jps=1&pa=1&prid=BOS\"
+      scrolling=\"no\" frameborder=\"0\" width=\"728\" height=\"90\" ></iframe>'));\r\n\r\n\n</script>\n\r\n\r\n<!--
+      - End JiWire Ad Tag -->\r\n\r\n<iframe src=\"/en/BOS/google/728x90.aspx\" width=\"1\"
+      height=\"1\" style=\"display:none\" ></iframe></span>\r\n\t\t\t\t\r\n\t\t\t</span>\r\n\t\t</div>\r\n\t\t<!--
+      start topHeading -->\r\n\t\t<div id=\"topheading_0_ctl1\" class=\"top-header\">\r\n\t<div
+      class=\"top-content\" id=\"ctl2\">\r\n\t\t<h2 id=\"topheading_0_ctlAirportName\">Boston
+      Logan International Airport</h2>\r\n\t\t<p id=\"topheading_0_ctlAirportBannerBlurb\">New
+      England's Gateway to the World</p>\r\n\t</div>\r\n\t<div class=\"top-sidebar\"
+      id=\"ctl3\">\r\n\t\t<ul id=\"topheading_0_ctlRightBannerLinks\" class=\"top-sidebar-list\"><li
+      class=\"connect-btn\">\r\n<a href=\"/en/BOS/internet.aspx\" title=\"Internet
+      Access Click to Connect\">\r\n<span style=\"FONT-SIZE: 14pt\"> <img alt=\"\"
+      src=\"~/media/wifi antenna.ashx?h=49&amp;w=70&amp;as=1\" width=\"70\" height=\"49\"
+      border=\"0\" /></span>Internet Access <br />Click to Connect</a> </li>\r\n\r\n<li><a
+      href=\"/en/BOS/help.aspx\" style=\"color:Red\" title=\"Help and Support\" target=\"_blank\">\r\n<img
+      src=\"~/media/buttons/redcross.ashx?w=56&amp;h=51&amp;as=1\" alt=\"Help &amp;
+      Support\" width=\"56\" height=\"51\" border=\"0\" style=\"margin-left:17px;
+      margin-top:7px; margin-right:15px\" />Help &amp; Support</a></li>\r\n\r\n<li><a
+      href=\"/en/BOS/track_flight.aspx\" title=\"Track Your Flight\"><span style=\"FONT-SIZE:
+      14pt\"><img style=\"WIDTH: 72px; HEIGHT: 49px\" alt=\"Track Your Flight\" src=\"/assets/images/icon-02.png?w=72&amp;h=49&amp;as=1\"
+      width=\"75\" height=\"53\" border=\"0\" /> </span>Track Your Flight</a> </li></ul>\r\n\t</div>\r\n</div>\r\n\t\t<!--
+      end topHeading -->\r\n\t\t<div id=\"main\">\r\n\t\t\t<div class=\"content\">\r\n\t\t\t\t<!--
+      start left-ad-box -->\r\n\t\t\t\t\r\n<div>\r\n\t<div class=\"ad-box\">\r\n\t\t\r\n\t\t\r\n\t\t<span
+      id=\"leftfullad_0_ctlFullLeftAdBox\"><!-- Begin JiWire Ad Tag -->\r\n<!-- 020411
+      RC took google out of onload -->\r\n\r\n\n<script type=\"text/javascript\">\n\r\n\r\n$j(document).ready(document.write('<iframe
+      src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_Tower1&jps=1&pa=1&fmt=160x600&prid=BOS\"
+      scrolling=\"no\" frameborder=\"0\" width=\"160\" height=\"600\" ></iframe>'));\r\n\r\n\n</script>\n\r\n\r\n<!--
+      End JiWire Ad Tag -->\r\n\r\n<iframe src=\"/en/BOS/google/160x600.aspx\" width=\"1\"
+      height=\"1\" style=\"display:none\" ></iframe></span>\r\n\t</div>\r\n</div>\r\n\r\n\t\t\t\t<!--
+      end left-ad-box -->\r\n\t\t\t\t<!-- start inner-content -->\r\n\t\t\t\t\r\n<div
+      class=\"inner-content\">\r\n\t<!-- start bodyRightSidebar -->\r\n\t\r\n\t<!--
+      end bodyRightSidebar -->\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t<span id=\"innercontent_0_ctlMainInnerContent\">\n<script
+      type=\"text/javascript\">\n\r\n\r\nvar qvars = getUrlVars();\r\nif (qvars[\"RN\"]
+      == \"906\") {\r\nlocation.href=\"/bos/internet/crew_delta.aspx\";\r\n} \r\n\r\n\n</script>\n\r\n\r\n<ul
+      style=\"POSITION: static\" class=\"icon-list\">\r\n<li><span style=\"FONT-SIZE:
+      14pt\"><img style=\"WIDTH: 85px; HEIGHT: 58px\" alt=\"Track Your Flight\" src=\"~/media/Images/AWG/icons_headers/icon-info-header.ashx?w=85&amp;h=58&amp;as=1\"
+      width=\"95\" height=\"67\" /> </span>\r\n<div class=\"icon-txt\">\r\n<h3><a
+      href=\"/en/BOS/airport_info.aspx\">Airport Information</a> </h3>\r\n<p>Find
+      information on airlines, places to eat and more.</p></div></li>\r\n<li><span
+      style=\"FONT-SIZE: 14pt\"><img style=\"WIDTH: 82px; HEIGHT: 54px\" alt=\"Track
+      Your Flight\" src=\"~/media/Images/AWG/icons_headers/icon-09.ashx?w=82&amp;h=54&amp;as=1\"
+      width=\"95\" height=\"67\" /> </span>\r\n<div class=\"icon-txt\">\r\n<h3><a
+      href=\"/en/BOS/track_flight.aspx\">Track Your Flight</a> </h3>\r\n<p>Click here
+      for up to the minute flight information.</p></div></li>\r\n<li><span style=\"FONT-SIZE:
+      14pt\"><img alt=\"Watch Live TV\" src=\"~/media/Images/AWG/icons_headers/icon-tv-header.ashx?w=95&amp;h=67&amp;as=1\"
+      width=\"95\" height=\"67\" /> </span>\r\n<div class=\"icon-txt\">\r\n<h3><a
+      href=\"/en/BOS/tv.aspx\">News and Entertainment</a> </h3>\r\n<p>Watch news,
+      sports, weather and more while you wait for your flight!</p></div></li>\r\n<li><span
+      style=\"FONT-SIZE: 14pt\"><img style=\"WIDTH: 95px; HEIGHT: 66px\" alt=\"Rent
+      A Car\" src=\"~/media/Images/AWG/icons_headers/icon-car-header.ashx?w=95&amp;h=66&amp;as=1\"
+      width=\"95\" height=\"67\" /> </span>\r\n<div style=\"WIDTH: 367px; HEIGHT:
+      80px\" class=\"icon-txt\">\r\n<h3><a href=\"/en/BOS/rentals.aspx\">Rental Cars</a>
+      </h3>\r\n<p>Find all of the available rental car companies at the airport. Also
+      find information about shuttles and execucars.</p></div></li>\r\n<li><span style=\"FONT-SIZE:
+      14pt\"><img alt=\"City Information\" src=\"~/media/Images/AWG/icons_headers/icon-city-header.ashx?w=95&amp;h=67&amp;as=1\"
+      width=\"95\" height=\"67\" /> </span>\r\n<div class=\"icon-txt\">\r\n<h3><a
+      href=\"/en/BOS/city.aspx\">City Information</a> </h3>\r\n<p>Information on the
+      Boston area.</p></div></li>\r\n<li><span style=\"FONT-SIZE: 14pt\"><img alt=\"Help
+      &amp; Feedback\" src=\"~/media/Images/AWG/icons_small/icon-08.ashx?w=56&amp;h=48&amp;as=1\"
+      width=\"56\" height=\"48\" /> </span>\r\n<div class=\"icon-txt\">\r\n<h3><a
+      href=\"#\">Help &amp; Feedback</a> </h3>\r\n<p>Find more information, or send
+      comments and feedback.</p></div></li></ul></span>\r\n\t\r\n</div>\r\n\r\n\t\t\t\t<!--
+      end inner-content -->\r\n\t\t\t\t<!-- start aside (if applicable) -->\r\n\t\t\t\t\r\n\t\t\t\t<!--
+      end aside (if applicable) -->\r\n\t\t\t</div>\r\n\t\t\t\r\n<div class=\"sidebar\">\r\n\t\r\n\t\r\n\t<span
+      id=\"homerightsidebar_0_ctlSidebar\"><!-- Begin JiWire Ad Tag -->\r\n<!-- 020411
+      RC took google out of onload -->\r\n<!-- 022311 RC added back original tags
+      -->\r\n\r\n<!-- Begin JiWire Ad Tag -->\r\n<!-- This tag is intended to be run
+      in Pre Auth behind the gateway garden wall before the user is authenticated
+      to the Internet. -->\r\n\n<script type=\"text/javascript\">\n\r\ndocument.write('<script
+      type=\"text/javascript\"  src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_1&jps=1&pa=1&embed=1&prid=BOS\"
+      ><\\/script>');\r\n\n</script>\n\r\n<noscript>\r\n<iframe src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_1&jps=1&pa=1&prid=BOS\"
+      scrolling=\"no\" frameborder=\"0\" width=\"300\" height=\"250\" ></iframe>\r\n</noscript>\r\n<!--
+      End JiWire Ad Tag -->\r\n\r\n\n<script type=\"text/javascript\">\n\r\n/*\r\n$j(document).ready(document.write('<iframe
+      src=\"http://tags.jiwire.com/?netid=150-BOS&lid=Pre_Auth_1&jps=1&pa=1&prid=BOS\"
+      scrolling=\"no\" frameborder=\"0\" width=\"300\" height=\"250\" ></iframe>'));\r\n*/\r\n\n</script>\n\r\n\r\n<!--
+      End JiWire Ad Tag -->\r\n\r\n<iframe src=\"/en/BOS/google/300x250.aspx\" width=\"1\"
+      height=\"1\" style=\"display:none\" ></iframe>\r\n<p align=\"right\">\r\n<span
+      style=\"FONT-FAMILY: 'Calibri','sans-serif'; COLOR: #1f497d; FONT-SIZE:9pt;\">Wi-Fi
+      Ads by JiWire <a href=\"http://tags.jiwire.com/advertisers/landing.php?netid=150&pa=1&prid=BOS\"
+      target=\"_blank\">Advertise Here</a></span>\r\n</p></span>\r\n</div>\t\r\n\r\n\t\t</div>\r\n\t\t<div
+      id=\"nav\">\r\n\t\t\t<ul id=\"topNavTabsUL\">\r\n\t\t\t\t<li id=\"ctlLI1\"><a
+      href=\"/en/BOS/airport_info.aspx\">\r\n\t\t\t\t<span>Airport <br />Info</span>
+      </a><div><span></span><ul><li>\n<a href='/en/BOS/airport_info/Airlines.aspx'>Airlines</a>\n</li>\n<li>\n<a
+      href='/en/BOS/airport_info/Cell Phone Lot.aspx'>Parking</a>\n</li>\n<li>\n<a
+      href='/en/BOS/airport_info/Food and Beverages.aspx'>Dining and Shopping</a>\n</li>\n<li>\n<a
+      href='/en/BOS/airport_info/Ground Transportation.aspx'>Ground Transportation</a>\n</li>\n</ul><em></em></div></li>\r\n\t\t\t\t<li
+      id=\"ctlLI2\"><a href=\"/en/BOS/track_flight.aspx\">Track <br />Your Flight
+      </a></li>\r\n\t\t\t\t<li id=\"ctlLI3\"><a href=\"/en/BOS/news.aspx\">News &amp;<br
+      />Video</a><div><span></span><ul><li>\n<a href='/en/BOS/news/Boston Latest News.aspx'>ESPN.com</a>\n</li>\n<li>\n<a
+      href='/en/BOS/news/Boston Most Popular.aspx'>Boston.com - Most Popular</a>\n</li>\n<li>\n<a
+      href='/en/BOS/news/CNET.aspx'>CNET News</a>\n</li>\n</ul><em></em></div></li>\r\n\t\t\t\t<li
+      id=\"ctlLI4\" class=\"other\"><a href=\"/en/BOS/rentals.aspx\">Rental<br />Cars</a></li>\r\n\t\t\t\t<li
+      id=\"ctlLI5\" class=\"other\"><a href=\"http://www.bostonusa.com/\" target=\"_blank\">Local
+      <br />Information </a></li>\r\n\t\t\t\t<li id=\"ctlLI6\" class=\"other\"><a
+      href=\"/en/BOS/help.aspx\">\r\n\t\t\t\t<span>Help <br />&amp; Feedback</span>
+      </a><div><span></span><ul><li>\n<a href='/en/BOS/help/about.aspx'>About AWG</a>\n</li>\n<li>\n<a
+      href='/en/BOS/help/feedback.aspx'>Feedback</a>\n</li>\n<li>\n<a href='/en/BOS/help/privacy.aspx'>Privacy
+      Policy</a>\n</li>\n<li>\n<a href='/en/BOS/help/terms.aspx'>WiFi Terms &amp;
+      Conditions</a>\n</li>\n</ul><em></em></div></li>\r\n\t\t\t</ul>\r\n            <div
+      id=\"userstuff\">\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div
+      id=\"footer\">\r\n\t\t<div class=\"holder\">\r\n\t\t\t<ul>\r\n\t\t\t\t <li id=\"ctlFootFeedback\"><a
+      href=\"http://AWGfeedback.questionpro.com\" target=\"_blank\">Feedback</a></li>
+      \r\n\t\t\t\t<li id=\"ctlFootPrivacy\"><a href=\"/en/BOS/help/privacy.aspx\">Privacy
+      Policy</a></li>\r\n\t\t\t\t<li id=\"ctlFootTerms\"><a href=\"/en/BOS/help/terms.aspx\">WiFi
+      Terms &amp; Conditions</a></li>\r\n\t\t\t\t<li id=\"ctlFootAbout\"><a style=\"POSITION:
+      static\" href=\"/en/BOS/help/about.aspx\">About AWG</a></li>\r\n\t\t\t\t<li
+      id=\"ctlFootSupport\"><a href=\"/en/BOS/help.aspx\">Support/FAQs</a></li>\r\n\t\t\t\t<li
+      id=\"ctlFootAccess\"><a href=\"/en/BOS/internet\">Access Public Internet</a></li>\r\n
+      \               <li><a href=\"mailto:support@airportwifi.com\">Need help?  Contact
+      support@airportwifi.com</a></li>\r\n\t\t\t</ul>\r\n\t\t\t<p>&copy; Advanced
+      Wireless Group LLC\r\n\t\t\t\t<span id=\"lblFootyear\">2011</span>\r\n\t\t\t\tAll
+      rights reserved.</p>\r\n\t\t\t<p></p>\r\n\t\t</div>\r\n\t</div>\r\n\t</form>\r\n<script
+      type=\"text/javascript\">\r\n//\tvar _gaq = _gaq || [];\r\n//\t_gaq.push(['_setAccount',
+      'UA-12465744-2']);\r\n//\t_gaq.push(['_setDomainName', 'none']);\r\n//\t_gaq.push(['_setAllowLinker',
+      true]);\r\n//\t_gaq.push(['_trackPageview']);\r\n//\t\r\n//\t(function() {\r\n//\t\tvar
+      ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
+      = true;\r\n//\t\tga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      : 'http://www') + '.google-analytics.com/ga.js';\r\n//\t\tvar s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);\r\n//\t})();\r\n</script>\r\n<!--\n<?xml version=\"1.0\"
+      encoding=\"UTF-8\"?>\n<WISPAccessGatewayParam>\n<Redirect>\n<AccessProcedure>1.0</AccessProcedure>\n<AccessLocation>BOS</AccessLocation>\n<LocationName>BOS</LocationName>\n<LoginURL>https://nomadprime.subscribe.loganwifi.com:1112/usg/process</LoginURL>\n<AbortLoginURL>https://airportwifi.com/en/BOS.aspx</AbortLoginURL>\n<RedirectionURL>https://airportwifi.com/en/BOS/internet/roaming_thankyou.aspx</RedirectionURL>\n<MessageType>100</MessageType>\n<ResponseCode>0</ResponseCode>\n</Redirect>\n</WISPAccessGatewayParam>\n-->\n\r\n<script
+      type=\"text/javascript\">\r\n    initPage();\r\n</script>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'

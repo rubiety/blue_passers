@@ -35,7 +35,6 @@ group :test do
   gem "shoulda-matchers"
   gem "vcr"
   gem "fakeweb"
-  gem "spork"
   gem "guard"
   gem "guard-bundler"
   gem "guard-rspec"

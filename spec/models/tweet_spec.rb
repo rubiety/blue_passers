@@ -1,6 +1,15 @@
 require "spec_helper"
 
 describe Tweet do
+  FLIGHT_FORMAT_EXAMPLES = {
+    "On flight 123 Now" => ["flight 123"],
+    "On #123 Now" => ["#123"],
+    "On B6123 Now" => ["B6123"],
+    "On JetBlue 123 Now" => ["JetBlue 123"],
+    "On flt 123 Now" => ["flt 123"],
+    "Boarding #123 then flight 456 - yes!" => ["#123", "flight 456"]
+  }
+
   it { should belong_to(:user) }
   it { should have_many(:check_ins) }
 
@@ -59,8 +68,47 @@ describe Tweet do
     end
   end
 
-  describe "processing check ins" do
+  describe "flight reference formats" do
+    FLIGHT_FORMAT_EXAMPLES.each do |text, value|
+      it "should parse '#{text}' as #{value.inspect}" do
+        described_class.extract_flight_references(text).should == value
+      end
+    end
+  end
 
+  describe "processing check ins" do
+    let(:user) { create(:user) }
+    let(:tweet) { create(:tweet, :user => user, :text => "On flight 123") }
+    let(:flight) { create(:flight, :number => 123) }
+
+    context "for an existing flight" do
+      before do
+        Flight.should_receive(:upcoming_by_number).and_return(flight)
+      end
+
+      it "should create a new check in" do
+        expect { tweet.process_check_ins }.to change { user.check_ins.count }.by(1)
+      end
+
+      it "should include 'Found existing flight' in the log"
+    end
+
+    context "for a new flight" do
+      before do
+        JetBlue::Flight.new.tap do |jetblue_flight|
+          Flight.should_receive(:upcoming_by_number).and_return(nil)
+          JetBlue::Flight.should_receive(:upcoming_by_number).and_return(jetblue_flight)
+          Flight.should_receive(:ensure_exists_from_jetblue).with(jetblue_flight).and_return(flight)
+        end
+      end
+
+      it "should create a new check in" do
+        expect { tweet.process_check_ins }.to change { user.check_ins.count }.by(1)
+      end
+
+      it "should include 'Found flight on JetBlue' in the log"
+      it "should include 'Created flight from JetBlue' in the log"
+    end
   end
 
 end

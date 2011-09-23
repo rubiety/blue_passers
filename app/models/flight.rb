@@ -30,11 +30,11 @@ class Flight < ActiveRecord::Base
   end
 
   def local_start_at
-    start_at.in_time_zone(origin.time_zone)
+    start_at.in_time_zone(origin.time_zone) if start_at and origin
   end
 
   def local_end_at
-    end_at.in_time_zone(destination.time_zone)
+    end_at.in_time_zone(destination.time_zone) if end_at and destination
   end
 
   def local_last_check_in_at
