@@ -10,7 +10,7 @@
       %dt Total Airports:
       %dd= @user.airports_count
       %dt Total Distance:
-      %dd= @user.distance_sum
+      %dd= number_with_delimiter @user.distance_sum
 
   = image_tag @user.avatar_url
 
