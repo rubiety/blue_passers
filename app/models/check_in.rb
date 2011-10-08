@@ -6,6 +6,7 @@ class CheckIn < ActiveRecord::Base
   default_scope order("id desc")
   scope :recent, limit(20)
   scope :exposed, joins(:user).where(:users => {:expose_flight_history => true})
+  scope :to_airport, lambda {|airport| joins(:flight).where("origin_id = ? OR destination_id = ?", airport.try(:id), airport.try(:id)) }
 
   after_create :update_user_stats
   after_create :update_airport_stats

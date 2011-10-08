@@ -65,7 +65,7 @@
           %tr{:class => cycle("odd", "even")}
             %td{:width => "20%"}= link_to airport, airport
             %td{:width => "60%"}= link_to airport.city_name, airport
-            %td{:width => "20%"}= "x 1" # TODO
+            %td{:width => "20%"}= @airport_checkins[airport.id]
         - if @airports.empty?
           %tr.no-results
             %td{:colspan => 3} No results found.
