@@ -8,10 +8,12 @@
 
 set :output, "/var/www/bluepassers.com/shared/log/cron_log.log"
 
-every 5.minutes do
-  runner "FlightMaster.consume_tweets"
-end
-
-every 10.minutes do
-  runner "FlightMaster.tweet_passengers"
-end
+# Disabled now that BluePass is done:
+#
+# every 5.minutes do
+#   runner "FlightMaster.consume_tweets"
+# end
+# 
+# every 10.minutes do
+#   runner "FlightMaster.tweet_passengers"
+# end
